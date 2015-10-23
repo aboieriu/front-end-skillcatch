@@ -6,7 +6,7 @@ define(function(require, exports, module) {
     var MapRouteController = Marionette.Controller.extend({
         showHome: function () {
             app.showLayout(new HomeLayout);
-            jQuery.ajax('/');
+
         }
     });
 

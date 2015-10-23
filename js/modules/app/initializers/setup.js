@@ -7,11 +7,11 @@ define(function (require, exports, module) {
             complete: function (response) {
                 if (response.status === 401) {
 
-                    Backbone.history.navigate('/test/401',true);
+                    //Backbone.history.navigate('/test/401',true);
                 } else if (response.status === 403) {
-                    Backbone.history.navigate('/test/403',true);
+                   // Backbone.history.navigate('/test/403',true);
                 }
-                alert("succes");
+                
 
             }
         });
