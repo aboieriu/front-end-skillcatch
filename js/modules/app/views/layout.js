@@ -8,8 +8,8 @@ define(function(require, exports, module) {
         template: '#app-layout',
         regions: {
             sidebar: '#sidebar',
-            container: '#container',
-            banner:'#banner'
+            banner: '#banner',
+            container: '#container'
         },
         initialize: function() {
             this.render();

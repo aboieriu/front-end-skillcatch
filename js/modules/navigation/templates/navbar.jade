@@ -1,2 +1,54 @@
-.container
-	| Menu
+#toggle
+	h2
+		|Top
+#user-panel
+	.pull-left.image
+		img(class=pull-left class="img-circle" src="/images/avatar5.png")
+	.pull-left.info
+		p
+			|GIGI DURU
+		a(href="#")
+			i(class="fa fa-circle text-success")
+			|        Online
+
+form(action="#",method="get",class="sidebar-form")
+	.input-group
+		input(type=text,name="search" class="form-control" placeholder="Search...")
+		span(class="input-group-btn")
+			button(type="submit",name="search",id="search-btn",class="btn btn-flat")
+				i(class="fa fa-search")
+ul(class="sidebar-menu")
+	li(class="header")
+		|Main Navigation
+	li(class="active-treeview")
+		a(href="#")
+			i(class="fa fa-dashboard")
+				span
+				|&nbsp;&nbsp;Tasks
+			i(class="fa fa-angle-left pull-right")
+		ul(class="treeview-menu")
+			li(class="active")
+				a(href="#")
+					i(class="fa fa-circle-o")
+						|       Task1
+			li
+				a(href="#")
+					i(class="fa fa-circle-o")
+						|       Task2
+	li(class="treeview")
+		a(href="#")
+			i(class="fa fa-files-o")
+			span
+				|&nbsp;&nbsp;&nbsp;Layout
+			span(class="label label-primary pull-right")
+				|4
+	li
+		a(href="#")
+			i(class="fa fa-th")
+			span
+				|&nbsp;&nbsp;&nbsp;Widgets
+			small(class="label pull-right bg-green")
+				|new
+
+
+
