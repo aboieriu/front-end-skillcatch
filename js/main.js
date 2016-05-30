@@ -7,8 +7,7 @@ define(function(require, exports, module) {
         Backbone.history.start();
     });
 
-
-
     app.start();
+
 }
 );

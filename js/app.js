@@ -7,6 +7,7 @@ define(function(require, exports, module) {
 
    var Backbone = require('backbone');
    var Marionette = require('marionette');
-
+   window.baseApiPath = 'http://localhost:8080/skillcatch';
    module.exports = new Backbone.Marionette.Application();
+
 });

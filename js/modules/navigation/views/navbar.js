@@ -3,9 +3,11 @@ define(function(require, exports, module) {
 
     module.exports = Marionette.ItemView.extend({
         template: '#navigation-navbar',
-        className:'left-sidebar',
+     //   className:'left-sidebar',
         initialize: function() {
             this.render();
         }
     });
+
 });
+

@@ -4,16 +4,19 @@ define(function (require, exports, module) {
 
     app.addInitializer(function () {
         $.ajaxSetup({
-            complete: function (response) {
-                if (response.status === 401) {
-
-                    //Backbone.history.navigate('/test/401',true);
-                } else if (response.status === 403) {
-                   // Backbone.history.navigate('/test/403',true);
+            beforeSend: function(xhr, setttings){
+                if (window.sessionStorage.authToken) {
+                    xhr.setRequestHeader('X-Auth-Token', window.sessionStorage.authToken);
                 }
-                
-
             }
+            , complete: function (response) {
+                if (response.status === 401) {
+                    Backbone.history.navigate('/login', true);
+                } else if (response.status === 403) {
+                   Backbone.history.navigate('/login', true);
+                }
+            }
+
         });
     });
 });

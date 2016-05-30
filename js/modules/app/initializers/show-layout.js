@@ -13,14 +13,17 @@ define(function(require, exports, module) {
                 this.appLayout.banner.show(new BannerView());
                 this.showLayout = function( view ) {
                     this.appLayout.container.show( view );
-                }
-
+                };
                 this.closeLayout = function() {
                     this.appLayout.container.close();
-                }
+                };
             });
         }
     });
 
     module.exports = new ShowLayoutInitializer();
+    $('.sidebar-toggle').on('click', function () {
+        $('.header').toggleClass('sidebar');
+        $('.main-sidebar.col-md-2').toggleClass('span0');
+    });
 });

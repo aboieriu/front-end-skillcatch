@@ -4,8 +4,8 @@ define(function(require, exports, module) {
     var HomeLayout = require('../views/layout');
 
     var MapRouteController = Marionette.Controller.extend({
-        showHome: function () {
-            app.showLayout(new HomeLayout);
+        showHome: function (userId) {
+            app.showLayout(new HomeLayout({userId:userId}));
 
         }
     });
