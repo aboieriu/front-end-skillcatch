@@ -1,0 +1,18 @@
+#tasks-list
+    table(style="width:100%; border: 1px solid #000")
+        tr(style="border: 1px solid #000;")
+            th(style="border-right: 1px solid #000;text-align:center; font-size:16px;")
+                | Denumire Proiect
+            th(style="border-right: 1px solid #000;text-align:center; font-size:16px;")
+                | Descriere Task
+            th(style="border-right: 1px solid #000;text-align:center; font-size:16px;")
+                | Update
+        tr
+            td(style="border-right: 1px solid #000;text-align:center; font-size:14px;")
+                a(href!='<%- getUrl() %>/task/<%- model.id %>')
+                    <%- model.name %>
+            td(style="border-right: 1px solid #000;text-align:center; font-size:14px;")
+                <%-model.descriptions %>
+            td(style="border-right: 1px solid #000;text-align:center; font-size:14px;")
+                a(href!='<%- getUrl() %>/update-task/<%- model.id %>')
+                    img(src="images/update.png" style="width:16px;height:16px")

@@ -1,0 +1,23 @@
+#taskPlan-list
+    table(style="width:100%; border: 1px solid #000")
+        tr(style="border: 1px solid #000;")
+            th(style="border-right: 1px solid #000;text-align:center; font-size:16px;")
+                | Denumire Proiect
+            th(style="border-right: 1px solid #000;text-align:center; font-size:16px;")
+                | Descriere TaskPlan
+            th(style="border-right: 1px solid #000;text-align:center; font-size:16px;")
+                | Update
+            th(style="border-right: 1px solid #000;text-align:center; font-size:16px;")
+                | Delete
+        tr
+            td(style="border-right: 1px solid #000;text-align:center; font-size:14px;")
+                a(href!='#show-project/<%- getGroupId() %>/show-taskPlan/<%- model.id %>')
+                    <%- model.name %>
+            td(style="border-right: 1px solid #000;text-align:center; font-size:14px;")
+                <%-model.descriptions %>
+            td(style="border-right: 1px solid #000;text-align:center; font-size:14px;")
+                a(href!='#show-project/<%- getGroupId() %>/update-taskPlan/<%- model.id %>')
+                    img(src="images/update.png" style="width:16px;height:16px")
+            td(style="border-right: 1px solid #000;text-align:center; font-size:14px;")
+                img(src="images/delete.png" style="width:16px;height:16px" id="ButtonDel")
+
