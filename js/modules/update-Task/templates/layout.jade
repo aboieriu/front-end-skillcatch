@@ -1,0 +1,19 @@
+#formContent.col-md-6
+    h2.titleForm
+        | Update TaskPlan
+
+    .input-group
+        input#updateName.text.form-control(value!="<%- model.name %>" aria-describedby="basic-addon1")
+        |Nume TaskPlan
+    br
+    .input-group
+        |Descriere TaskPlan
+        textarea#updateDescription.text.form-control(aria-describedby="basic-addon1")
+            <%- model.description %>
+
+    br
+    button#saveButton.btn.btn-default
+        | Update taskPlan
+
+    button.ButtonDel.btn.btn-default(data-action="bea")
+        | Delete

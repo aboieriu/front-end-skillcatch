@@ -1,0 +1,19 @@
+#formContent.col-md-6
+    h2.titleForm
+        | Update Project
+
+    .input-group
+        input#updateName.text.form-control(value!="<%= model.name %>" aria-describedby="basic-addon1")
+        |Nume Proiect
+    br
+    .input-group
+        |Descriere Project
+        textarea#updateDescription.text.form-control(aria-describedby="basic-addon1")
+            <%- model.descriptions %>
+
+    br
+    button#saveButton.btn.btn-default
+        | Update Project
+
+    button.ButtonDel.btn.btn-default(data-action="bea")
+        | Delete
