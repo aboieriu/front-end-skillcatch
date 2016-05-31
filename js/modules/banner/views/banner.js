@@ -11,6 +11,9 @@ define(function(require, exports, module) {
         regions: {
             showUserDetail:"#show-users"
         },
+        events:{
+            'click #logout' :'logout'
+        },
         initialize: function() {
             var userModel = new UserDetailsModel({
                 userId:this.userId
@@ -26,9 +29,10 @@ define(function(require, exports, module) {
             });
         },
         logout: function(){
-                var logout = window.sessionStorage.authToken;
-
+            if(window.sessionStorage.authToken){
+                window.sessionStorage.removeItem('authToken');
+                Backbone.history.navigate('/#login', true)
+            }
         }
-
     });
 });
