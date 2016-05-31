@@ -6,8 +6,6 @@ define(function(require, exports, module) {
     var Marionette = require('marionette');
 
     module.exports = Marionette.ItemView.extend({
-        tagName: 'li',
-        className: 'ListProjects',
         template: '#showProjects-project-item'
 
     });

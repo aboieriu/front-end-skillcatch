@@ -1,22 +1,24 @@
 #project-list
-    table(style="width:100%; border: 1px solid #000")
-        tr(style="border: 1px solid #000;")
-            th(style="border-right: 1px solid #000;text-align:center; font-size:16px;")
-                | Denumire Proiect
-            th(style="border-right: 1px solid #000;text-align:center; font-size:16px;")
-                | Descriere Proiect
-            th(style="border-right: 1px solid #000;text-align:center; font-size:16px;")
-                | Status
-            th(style="border-right: 1px solid #000;text-align:center; font-size:16px;")
-                | Update
-        tr
-            td(style="border-right: 1px solid #000;text-align:center; font-size:14px;")
-                a(href!='#show-project/<%- model.id %>')
-                    <%- model.name %>
-            td(style="border-right: 1px solid #000;text-align:center; font-size:14px;")
-                <%-model.descriptions %>
-            td(style="border-right: 1px solid #000;text-align:center; font-size:14px;")
-                <%- model.status %>
-            td(style="border-right: 1px solid #000;text-align:center; font-size:14px;")
-                a(href!='#update-project/<%- model.id %>')
-                    img(src="images/update.png" style="width:16px;height:16px")
+    table.table
+        thead
+            tr
+                th(style="text-align:center")
+                    |Denumire Proiect
+                th(style="text-align:center")
+                    |Descriere Proiect
+                th(style="text-align:center")
+                    |Status
+                th(style="text-align:center")
+                    |update
+        tbody
+            tr
+                td(style="text-align:center")
+                    a(href!='#show-project/<%- model.id %>')
+                        <%- model.name %>
+                td(style="text-align:center")
+                    <%-model.descriptions %>
+                td(style="text-align:center")
+                    <%- model.status %>
+                td(style="text-align:center")
+                    a(href!='#update-project/<%- model.id %>')
+                        img(src="images/update.png" style="width:16px;height:16px")

@@ -1,1 +1,40 @@
-<%- model.name %>
+table.table(style="background:#fff; opacity:0.9; border-radius:5px")
+    tbody
+        tr
+            td(width="33.33%")
+            td(width="33.33%")
+               img(src!="<%= model.image %>")#avatar
+            td(width="33.33%")
+        tr
+            td(width="33.33%")
+                img(src="images/email.png" alt="phone" width="40" height="40")#user-email
+                .user-email
+                    span
+                        <%- model.email %>
+            td(width="33.33%")
+                img(src="images/phone.png" alt="phone" width="40" height="40")#user-phone
+                .user-number
+                    span
+                        <%- model.phone %>
+            td(width="33.33%")
+                        img(src="images/user.png" alt="phone" width="40" height="40")#user-icon
+                        .user-name
+                            span
+                                <%- model.username %>
+table.table(style="background:#fff; opacity:0.9; border-radius:5px")
+    tbody
+        tr
+            th(width="50%" )
+                |Nume:
+            th(width="50%")
+                <%- model.name %>
+        tr
+            th(width="50%" )
+                |Prenume:
+            th(width="50%" )
+                <%- model.surname %>
+        tr
+            th(width="50%" )
+                |Adresa:
+            th(width="50%" )
+                <%- model.address %>

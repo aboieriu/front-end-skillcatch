@@ -5,7 +5,7 @@ define(function(require, exports, module) {
     var Project = require('modules/showProjects/models/project');
     var UserDetailsModel =require('../models/userDetailsModel');
     var UserDetails = require('./userDetails');
-    module.exports = Marionette.ItemView.extend({
+    module.exports = Marionette.Layout.extend({
         id: 'home',
         template: '#home-layout',
         regions: {

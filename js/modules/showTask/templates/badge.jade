@@ -1,13 +1,15 @@
 #badge-list
-    table(style="width:100%; border: 1px solid #000")
-        tr(style="border: 1px solid #000;")
-            th(style="border-right: 1px solid #000;text-align:center; font-size:16px;")
-                | Denumire Badge
-            th(style="border-right: 1px solid #000;text-align:center; font-size:16px;")
-                | Descriere Badge
-        tr
-            td(style="border-right: 1px solid #000;text-align:center; font-size:14px;")
-                a(href!='<%- getUrl() %>/badge')
-                    <%- model.name %>
-            td(style="border-right: 1px solid #000;text-align:center; font-size:14px;")
-                <%-model.descriptions %>
+    table.table
+        thead
+            tr
+                th
+                    | Denumire Badge
+                th
+                    | Descriere Badge
+        tbody
+            tr
+                td
+                    a(href!='<%- getUrl() %>/badge')
+                        <%- model.name %>
+                td
+                    <%-model.description %>

@@ -20,9 +20,11 @@ define(function(require, exports, module) {
                 id:options.id
             });
             this.model.fetch();
+            this.listenTo(this.model,'destroy', this.goHome);
+            this.listenTo(this.model,'sync', this.render);
         },
         goHome:function(){
-            Backbone.history.navigate('#articole', true);
+            Backbone.history.navigate('#show-projects', true);
         },
         saveNewProject : function() {
             var updateName = $('#updateName').val();

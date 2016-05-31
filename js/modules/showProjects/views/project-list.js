@@ -7,7 +7,6 @@ define(function (require, exports, module) {
     var Project = require('./project-item');
 
     module.exports = Marionette.CollectionView.extend({
-        tagName:'ul',
         itemView: Project,
         itemViewOptions: function(options) {
             return {
