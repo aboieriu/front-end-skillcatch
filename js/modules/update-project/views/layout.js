@@ -29,9 +29,11 @@ define(function(require, exports, module) {
         saveNewProject : function() {
             var updateName = $('#updateName').val();
             var updateDescription = $('#updateDescription').val();
+            var updateStatus = $('#updateStatus').val();
 
             this.model.set('name', updateName);
             this.model.set('descriptions', updateDescription);
+            this.model.set('status', updateStatus);
 
             this.model.url = window.baseApiPath +'/api/projectGroup/' + this.id;
 
@@ -40,10 +42,14 @@ define(function(require, exports, module) {
             });
         },
         deleteProject : function(){
-            this.model.url = window.baseApiPath +'/api/projectGroup/' + this.id;
-            this.model.destroy().always(function(){
-                Backbone.history.navigate('#show-projects', true);
-            });
+
+
+            if(confirm('Delete Project')){
+                this.model.url = window.baseApiPath +'/api/projectGroup/' + this.id;
+                this.model.destroy().always(function(){
+                    Backbone.history.navigate('#show-projects',true)
+                });
+            }
 
         }
     });

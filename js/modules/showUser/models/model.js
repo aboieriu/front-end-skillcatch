@@ -10,7 +10,8 @@ define(function(require, exports, module) {
 
     module.exports = Backbone.Model.extend({
         url :function() {
-            return   window.baseApiPath + '/api/projectGroup/' + this.get('groupId') + '/user/' + this.get('userId') ;
+            var skillCatchData = window.sessionStorage.skillCatchData;
+            return   window.baseApiPath + '/api/projectGroup/' + this.get('groupId') + '/user/'+ JSON.parse(skillCatchData).userId ;
         }
     });
 });

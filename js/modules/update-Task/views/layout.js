@@ -13,7 +13,7 @@ define(function(require, exports, module) {
 
         events:{
             'click #saveButton':'saveNewTask',
-            'click .ButtonDel' :'deleteTask'
+            'click #ButtonDel' :'deleteTask'
         },
         initialize:function(options){
 
@@ -44,9 +44,13 @@ define(function(require, exports, module) {
         deleteTask : function(){
 
             var self=this;
-            this.model.destroy().always(function(){
-                Backbone.history.navigate('#show-project/'+ self.options.groupId , true);
-            });
+
+           if(confirm('Delete Task?')){
+               this.model.url = window.baseApiPath + '/api/projectGroup/' + this.options.groupId + '/taskPlan/'
+                   + this.options.taskPlanId + '/task/' + this.options.taskId;
+               this.model.destroy().always(function(){
+               window.history.back();
+           });}
         }
     });
 });

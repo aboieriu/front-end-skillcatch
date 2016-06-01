@@ -12,8 +12,14 @@
             <%- model.descriptions %>
 
     br
-    button#saveButton.btn.btn-default
+    .input-group
+        |Descriere Project
+        input#updateStatus.text.form-control(value!="<%- model.status %>" aria-describedby="basic-addon1")
+
+
+    br
+    button#saveButton.btn.btn-info
         | Update Project
 
-    button.ButtonDel.btn.btn-default(data-action="bea")
+    button.ButtonDel.btn.btn-default.btn-danger(data-action="delete")
         | Delete
