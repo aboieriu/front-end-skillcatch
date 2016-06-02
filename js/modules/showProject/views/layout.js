@@ -18,23 +18,29 @@ define(function(require, exports, module) {
 
 
         initialize: function (options) {
-
+            var taskPlanModel = new TaskPlans({
+                taskPlanId:options.taskPlanId,
+                groupId:options.groupId,
+                id:options.id
+            })
             this.id = options.id;
             this.groupId= options.groupId;
         },
-        onRender: function () {
+        onRender: function (options) {
             var self = this;
             var projectModel = new ProjectModel({
                 id:this.id,
-                groupId:this.groupId
+                groupId:this.groupId,
+                taskPlanId:this.taskPlanId
             });
             projectModel.fetch().then(function(options) {
                 self.showProject.show(new ProjectDetails({
                     model: new Backbone.Model(options)
                 }));
             });
-            var taskPlans = new TaskPlans();
+            var taskPlans = new TaskPlans({name:'name'});
             taskPlans.id = this.id;
+            taskPlans.name= this.name;
             taskPlans.fetch().then(function(options){
                 self.showTasks.show(new ProjectTaskPlans({
                     collection: new Backbone.Collection(options)

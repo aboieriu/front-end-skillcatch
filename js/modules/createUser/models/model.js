@@ -7,7 +7,7 @@ define(function(require, exports, module) {
 
     module.exports = Backbone.Model.extend({
         url :function() {
-            return window.baseApiPath + '/api/projectGroup/' +  this.get('groupId')+ '/taskPlan/' + this.get('taskPlanId')+ '/task';
+            return window.baseApiPath + '/api/user';
         }
     });
 });

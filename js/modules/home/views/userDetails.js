@@ -4,6 +4,7 @@ define(function(require, exports, module) {
 
     module.exports = Marionette.ItemView.extend({
         idName: 'project-taskPlan-item',
-        template: '#home-user-item'
+        template: '#home-user-item',
+
     });
 });

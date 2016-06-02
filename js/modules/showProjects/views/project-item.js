@@ -8,5 +8,26 @@ define(function(require, exports, module) {
     module.exports = Marionette.ItemView.extend({
         template: '#showProjects-project-item'
 
+        ,events:{
+            'click #deleteProject' :'deleteProject'
+        },
+        initialize: function(){
+            debugger;
+            this.model.get('status')
+            if(this.model.get('status')=="1"){
+                this.model.set('status',"val")
+            }
+            if(this.model.get('status')=="2"){
+                this.model.set('status',"val2")
+            }
+
+        }
+        ,deleteProject : function(ev){
+            if(confirm('Delete Project')){
+                this.model.url = window.baseApiPath +'/api/projectGroup/'+  this.options.id ;
+                this.model.destroy();
+            }
+        }
+
     });
 });

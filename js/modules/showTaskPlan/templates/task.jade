@@ -8,6 +8,10 @@
                     | Descriere Task
                 th
                     | Update
+                th
+                    | Add
+                th.danger
+                    |Delete
         tbody
             tr
                 td
@@ -18,3 +22,8 @@
                 td
                     a(href!='<%- getUrl() %>/update-task/<%- model.id %>')
                         img(src="images/update.png" style="width:16px;height:16px")
+                td
+                    a(href!='<%- getUrl() %>/create-task')
+                        img(src="images/buttonadd.png" style="width:16px;height:16px")
+                td(style="text-align:center").danger
+                            img(src="images/delete.png" style="width:16px;height:16px")#deleteProject

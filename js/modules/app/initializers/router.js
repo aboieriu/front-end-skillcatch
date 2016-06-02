@@ -16,6 +16,7 @@ define(function(require, exports, module) {
     var ShowBadges = require('modules/showBadges/router');
     var ShowTaskItem = require('modules/showTask/router');
     var ShowBadgeForTask = require('modules/showBadgeForTask/router');
+    var ShowUserProjects = require('modules/showUserProjects/router');
     var ShowUser = require('modules/showUser/router');
     var RouterInitializer = Marionette.Controller.extend({
         initialize: function() {
@@ -37,6 +38,7 @@ define(function(require, exports, module) {
                 new UpdateTask();
                 new CreateBadge();
                 new ShowUser();
+                new ShowUserProjects();
             });
 
 

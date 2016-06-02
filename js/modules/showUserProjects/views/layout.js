@@ -34,6 +34,7 @@ define(function(require, exports, module) {
                 }));
 
             });
+            projectModel.toJSON();
 
 
         },

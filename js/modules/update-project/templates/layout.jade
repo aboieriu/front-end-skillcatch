@@ -1,25 +1,28 @@
-#formContent.col-md-6
+#formContent.form-inline.pull-center
     h2.titleForm
         | Update Project
 
     .input-group
+        label(for="updateName")
+            |Nume Proiect
         input#updateName.text.form-control(value!="<%= model.name %>" aria-describedby="basic-addon1")
-        |Nume Proiect
     br
     .input-group
-        |Descriere Project
+        label(for="updateDescription")
+            |Descriere Project
         textarea#updateDescription.text.form-control(aria-describedby="basic-addon1")
             <%- model.descriptions %>
-
     br
     .input-group
-        |Descriere Project
-        input#updateStatus.text.form-control(value!="<%- model.status %>" aria-describedby="basic-addon1")
-
-
+        label(for="updateStatus")
+            |Status &nbsp;&nbsp;
+        select#updateStatus.text.form-control(value!="<%- model.status %>" aria-describedby="basic-addon1")
+            option(value="Waiting Start")
+                |Waiting Start
+            option(value='In progress')
+                |In progress
+            option(value='Completed')
+                |Completed
     br
     button#saveButton.btn.btn-info
         | Update Project
-
-    button.ButtonDel.btn.btn-default.btn-danger(data-action="delete")
-        | Delete

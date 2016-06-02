@@ -1,7 +1,7 @@
 define(function(require, exports, module) {
     var Backbone = require('backbone');
     var Marionette = require('marionette');
-    var taskDetails = require('./project-taskPlan-item');
+    var taskDetails = require('./project-task-item');
     var taskModel = require('../models/taskModel');
     var badgeDetails = require('./badges');
     var badgeModel = require('../models/badges');

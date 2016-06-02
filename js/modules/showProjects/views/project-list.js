@@ -11,8 +11,10 @@ define(function (require, exports, module) {
         itemViewOptions: function(options) {
             return {
                 groupId: this.options.groupId,
+
             };
         }
+
     });
 
 

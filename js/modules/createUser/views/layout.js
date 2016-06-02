@@ -4,18 +4,18 @@
 define(function(require, exports, module) {
     var Backbone = require('backbone');
     var Marionette = require('marionette');
-    var createTaskModel = require('../models/model');
+    var createUser = require('../models/model');
 
     module.exports = Marionette.ItemView.extend({
-        id: 'createTask',
-        template: '#createTask-layout',
+        id: 'createUser',
+        template: '#createUser-layout',
 
         events:{
             'click #saveButton':'saveNewTask',
         },
         initialize:function(options){
 
-            this.model = new createTaskModel({
+            this.model = new createUser({
                 taskPlanId:options.taskPlanId,
                 groupId:options.groupId,
             });
@@ -26,11 +26,15 @@ define(function(require, exports, module) {
         },
         saveNewTask : function() {
 
-            var updateName = $('#taskName').val();
-            var updateDescription = $('#taskDescription').val();
+            var userName = $('#userName').val();
+            var userFirstName = $('#userFirstName').val();
+            var userSurName = $('#userSurName').val();
+            var userEmail= $('#userFirstName').val();
 
-            this.model.set('name', updateName);
-            this.model.set('description', updateDescription);
+            this.model.set('userName', userName);
+            this.model.set('name', userFirstName);
+            this.model.set('surname', userFirstName);
+            this.model.set('email', userEmail);
             var self=this;
             this.model.save().always(function(){
                 Backbone.history.navigate('#show-projects' , true);

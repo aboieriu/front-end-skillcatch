@@ -10,7 +10,7 @@ define(function(require, exports, module) {
     var MapRouteController = Marionette.Controller.extend({
         showProjects: function (id) {
 
-            app.showLayout(new NewShowProjects);
+            app.showLayout(new NewShowProjects({id:id}));
         }
     });
 

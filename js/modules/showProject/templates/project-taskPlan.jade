@@ -2,14 +2,18 @@
     table.table
         thead
             tr
-                th
+                th.warning
                     | Denumire TaskPlan
-                th
+                th.warning
                     | Descriere TaskPlan
-                th
+                th.warning
                     | Status
-                th
-                    | update
+                th.warning
+                    | Update
+                th.warning
+                    |Add
+                th.danger
+                    | Delete
         tbody
             tr
                 td
@@ -22,3 +26,8 @@
                 td
                     a(href!='#show-project/<%- getGroupId() %>/update-taskPlan/<%- model.id %>')
                         img(src="images/update.png" style="width:16px;height:16px")
+                td
+                    a(href!='#show-project/<%- getGroupId() %>/create-taskPlan')
+                        img(src="images/buttonadd.png" style="width:16px;height:16px")
+                td(style="text-align:center").danger
+                    img(src="images/delete.png" style="width:16px;height:16px")#deleteTaskPlan

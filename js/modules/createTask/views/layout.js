@@ -26,11 +26,11 @@ define(function(require, exports, module) {
         },
         saveNewTask : function() {
 
-            var updateName = $('#taskName').val();
-            var updateDescription = $('#taskDescription').val();
+            var taskName = $('#taskName').val();
+            var taskDescription = $('#taskDescription').val();
 
-            this.model.set('name', updateName);
-            this.model.set('description', updateDescription);
+            this.model.set('name', taskName);
+            this.model.set('description', taskDescription);
             var self=this;
             this.model.save().always(function(){
                 Backbone.history.navigate('#show-projects' , true);

@@ -6,7 +6,11 @@ define(function(require, exports, module) {
     module.exports = Backbone.Collection.extend({
         model: projectsModel,
         url :function() {
-            return window.baseApiPath + '/api/projectGroup/'
+            var skillCatchData = window.sessionStorage.skillCatchData;
+            if (!skillCatchData) {
+                throw new Error("Unable to find logged user data");
+            }
+            return   window.baseApiPath + '/api/user/' + JSON.parse(skillCatchData).userId + '/assignedProjects';
         }
     });
 });

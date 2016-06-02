@@ -12,7 +12,6 @@ define(function(require, exports, module) {
             'click #deleteProject' :'deleteProject'
         }
         ,deleteProject : function(ev){
-            debugger;
             if(confirm('Delete Project')){
                 this.model.url = window.baseApiPath +'/api/projectGroup/'+  this.options.id ;
                 this.model.destroy();

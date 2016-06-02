@@ -3,25 +3,23 @@ define(function(require, exports, module) {
     var Marionette = require('marionette');
     var Projects = require('./project-list');
     var Project = require('../models/project');
-
+    var ProjectM = require('../models/deleteModel');
+    var deleteProjectModel = require('modules/showProject/models/projectModel');
     module.exports = Marionette.Layout.extend({
         groupId: 'showProjects',
         template: '#showProjects-layout',
 
         regions: {
-            showProjects: "#show-projects"
+            showProjects: "#show-projectDetails"
         },
-
         initialize: function (options) {
-
-            this.id = options.id
+            this.model = new Project({});
+            this.model.fetch();
         },
 
         onRender: function () {
             var self = this;
             var projectModel = new Project();
-
-
             projectModel.fetch().then(function(options) {
                 self.showProjects.show(new Projects({
                     collection: new Backbone.Collection(options),
@@ -29,8 +27,6 @@ define(function(require, exports, module) {
                 }));
 
             });
-
-
         }
     });
 });

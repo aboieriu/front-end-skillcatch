@@ -9,6 +9,16 @@ define(function (require, exports, module) {
         ,initialize: function(options) {
             this.templateHelpers = this.templateHelpers || {};
             this.templateHelpers.getGroupId = _.bind(this.getGroupId, this);
+        },
+        events:{
+            'click #deleteTaskPlan' :'deleteTaskPlan'
+        }
+        ,deleteTaskPlan : function(ev){
+            if(confirm('Delete TaskPlan')){
+                this.model.url = window.baseApiPath + '/api/projectGroup/' + this.options.groupId + '/taskPlan/'
+                    + this.model.id;
+                this.model.destroy();
+            }
         }
 
         , getGroupId: function() {

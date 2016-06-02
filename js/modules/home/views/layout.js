@@ -19,8 +19,8 @@ define(function(require, exports, module) {
                 userId:this.userId
             });
             var projectDetailsModel = new Project({
-                userId:this.userId
             });
+            projectDetailsModel.toJSON()
 
         },
         onRender: function () {
