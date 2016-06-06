@@ -20,10 +20,12 @@ define(function(require, exports, module) {
         saveNewProject : function() {
             var projectName = $('#projectName').val();
             var projectDescription = $('#projectDescription').val();
+            var projectStatus = $('#projectStatus').val();
 
 
             this.model.set('name', projectName);
             this.model.set('descriptions', projectDescription);
+            this.model.set('status', projectStatus);
 
 
             this.model.save().always(function(){

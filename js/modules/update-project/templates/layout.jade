@@ -1,4 +1,4 @@
-#formContent.form-inline.pull-center
+#formContent.form-inline.col-md-4.col-md-offset-4
     h2.titleForm
         | Update Project
 
@@ -19,10 +19,10 @@
         select#updateStatus.text.form-control(value!="<%- model.status %>" aria-describedby="basic-addon1")
             option(value="Waiting Start")
                 |Waiting Start
-            option(value='In progress')
+            option(value='In Progress')
                 |In progress
             option(value='Completed')
                 |Completed
     br
-    button#saveButton.btn.btn-info
+    button#saveButton.btn.btn-success
         | Update Project

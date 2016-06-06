@@ -3,7 +3,6 @@ define(function(require, exports, module) {
     var Marionette = require('marionette');
     var Projects = require('./project-list');
     var Project = require('../models/project');
-    var ProjectM = require('../models/deleteModel');
     var deleteProjectModel = require('modules/showProject/models/projectModel');
     module.exports = Marionette.Layout.extend({
         groupId: 'showProjects',

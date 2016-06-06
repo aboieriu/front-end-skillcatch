@@ -8,6 +8,14 @@ define(function (require, exports, module) {
         template: '#showTaskPlan-task'
         ,  events:{
             'click #task':'getUrl',
+            'click #deleteTask' :'deleteTask'
+        }
+        ,deleteTask : function(ev){
+            if(confirm('Delete Task')){
+                this.model.url = window.baseApiPath + '/api/projectGroup/' + this.options.groupId + '/taskPlan/'
+                    + this.options.taskPlanId +'/task/' +this.model.id;
+                this.model.destroy();
+            }
         },
         initialize: function(options) {
             this.templateHelpers = this.templateHelpers || {};

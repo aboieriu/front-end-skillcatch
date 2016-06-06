@@ -12,14 +12,7 @@ define(function(require, exports, module) {
             'click #deleteProject' :'deleteProject'
         },
         initialize: function(){
-            debugger;
-            this.model.get('status')
-            if(this.model.get('status')=="1"){
-                this.model.set('status',"val")
-            }
-            if(this.model.get('status')=="2"){
-                this.model.set('status',"val2")
-            }
+
 
         }
         ,deleteProject : function(ev){

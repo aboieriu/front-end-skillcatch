@@ -1,7 +1,10 @@
-.nameShowTaskPlan
-    |Nume proiect:  <%- model.name %> &nbsp; Descriere proiect: <%-model.description %> &nbsp;
-    br
-    span
-        |Numarul Task-urilor &nbsp;
-    span(id="count-task")
+.nameShowTask.breadcrumb
+   span
+        h3
+            |Nume task:
+            |<%- model.name %>
+        h3
+            |Descriere task :
+            |<%-model.description %> &nbsp;
+
 

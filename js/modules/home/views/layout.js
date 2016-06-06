@@ -18,25 +18,29 @@ define(function(require, exports, module) {
             var userModel = new UserDetailsModel({
                 userId:this.userId
             });
-            var projectDetailsModel = new Project({
-            });
-            projectDetailsModel.toJSON()
+            this.model= new Project();
+            this.model.fetch();
+
 
         },
         onRender: function () {
             var self = this;
-            var projectModel = new ProjectModel();
+            var projectDetailsModel = new Project();
+            projectDetailsModel.fetch().then(function(options){
+                var count= projectDetailsModel.length;
+                document.getElementById("count-project").innerHTML = count;
+                self.showProjectDetails.show(new Projects({
+                    collection: new Backbone.Collection(options)
+                }));
+                debugger;
+            });
             this.model = new UserDetailsModel();
             this.model.fetch().then(function(options) {
                 self.showUser.show(new UserDetails({
                     model: new Backbone.Model(options),
                 }));
             });
-            var projectDetailsModel = new Project();
 
-            projectDetailsModel.fetch().then(function(){
-                document.getElementById("count-project").innerHTML = projectDetailsModel.length;
-            });
         }
     });
 

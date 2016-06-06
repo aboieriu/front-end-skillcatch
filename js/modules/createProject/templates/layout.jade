@@ -1,15 +1,29 @@
-//
-   Created by amusat on 5/23/2016.
 
-#formContent.col-md-6
+#formContent.form-inline.col-md-4.col-md-offset-4
     h2.titleForm
-        |NNew Project
+        | Adauga proiect nou
 
     .input-group
-        input#projectName.text.form-control(placeholder="Numele proiectului" aria-describedby="basic-addon1")
+        label(for="projectName")
+            |Denumire Proiect
+        input#projectName.text.form-control(value!="<%= model.name %>" aria-describedby="basic-addon1")
     br
     .input-group
-        textarea#projectDescription.text.form-control(placeholder="Descriere proiect" aria-describedby="basic-addon1")
+        label(for="projectDescription")
+            |Descriere Project
+        textarea#projectDescription.text.form-control(aria-describedby="basic-addon1")
+            <%- model.descriptions %>
     br
-    button#saveButton.btn.btn-default
-        | Save
+    .input-group
+        label(for="projectStatus")
+            |Status &nbsp;&nbsp;
+        select#projectStatus.text.form-control(value!="<%- model.status %>" aria-describedby="basic-addon1")
+            option(value="Waiting Start")
+                |Waiting Start
+            option(value='In Progress')
+                |In progress
+            option(value='Completed')
+                |Completed
+    br
+    button#saveButton.btn.btn-info
+        | Adauga proiect

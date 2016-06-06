@@ -38,15 +38,14 @@ define(function(require, exports, module) {
                     model: new Backbone.Model(options)
                 }));
             });
-            var taskPlans = new TaskPlans({name:'name'});
+            var taskPlans = new TaskPlans();
             taskPlans.id = this.id;
-            taskPlans.name= this.name;
             taskPlans.fetch().then(function(options){
                 self.showTasks.show(new ProjectTaskPlans({
                     collection: new Backbone.Collection(options)
                     , groupId: self.id
                 }));
-
+                document.getElementById("count-task").innerHTML= taskPlans.length;
             });
 
 

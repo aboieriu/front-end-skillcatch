@@ -19,6 +19,11 @@ define(function (require, exports, module) {
         initialize: function(options) {
             this.templateHelpers = this.templateHelpers || {};
             this.templateHelpers.getUrl = _.bind(this.getUrl, this);
+
+        },
+        onRender: function(){
+
+
         }
 
         , getTaskId: function() {
