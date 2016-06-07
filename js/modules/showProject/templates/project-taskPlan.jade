@@ -7,8 +7,6 @@
                 th.warning
                     | Descriere TaskPlan
                 th.warning
-                    | Status
-                th.warning
                     | Update
                 th.warning
                     |Add
@@ -21,8 +19,6 @@
                         <%- model.name %>
                 td
                     <%-model.description %>
-                td
-                    <%- model.status %>
                 td
                     a(href!='#show-project/<%- getGroupId() %>/update-taskPlan/<%- model.id %>')
                         img(src="images/update.png" style="width:16px;height:16px")

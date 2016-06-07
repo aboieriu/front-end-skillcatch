@@ -7,9 +7,8 @@ define(function(require, exports, module) {
 
     module.exports = Marionette.ItemView.extend({
         template: '#home-project-item',
-        initialize:function(){
-
+        initialize: function(){
+            this.templateHelpers = this.templateHelpers || {};
         }
-
     });
 });

@@ -27,12 +27,26 @@ define(function(require, exports, module) {
             var self = this;
             var projectDetailsModel = new Project();
             projectDetailsModel.fetch().then(function(options){
+
                 var count= projectDetailsModel.length;
                 document.getElementById("count-project").innerHTML = count;
+
                 self.showProjectDetails.show(new Projects({
+
                     collection: new Backbone.Collection(options)
-                }));
-                debugger;
+
+                   /* var collLength = this.collection.length;
+                var modelLenght = this.collection.models.length;
+                for(var j=0; j<collLength; j++){
+                    for(var i=0; i<modelLenght;i++){
+
+                        return this.collection.models[i].attributes[j].name ;
+
+                    }
+                }
+*/
+            }));
+
             });
             this.model = new UserDetailsModel();
             this.model.fetch().then(function(options) {

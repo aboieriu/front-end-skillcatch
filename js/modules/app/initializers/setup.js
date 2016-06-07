@@ -5,9 +5,7 @@ define(function (require, exports, module) {
     app.addInitializer(function () {
         $.ajaxSetup({
             beforeSend: function(xhr, setttings){
-                if (window.sessionStorage.authToken) {
-                    xhr.setRequestHeader('X-Auth-Token', window.sessionStorage.authToken);
-                }
+                xhr.setRequestHeader('X-Auth-Token', app.getAuthToken());
             }
             , complete: function (response) {
                 if (response.status === 401) {
@@ -19,4 +17,8 @@ define(function (require, exports, module) {
 
         });
     });
+
+    app.getAuthToken = function() {
+        return window.sessionStorage.authToken;
+    }
 });

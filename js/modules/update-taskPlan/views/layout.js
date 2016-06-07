@@ -33,6 +33,7 @@ define(function(require, exports, module) {
             var updateName = $('#updateName').val();
             var updateDescription = $('#updateDescription').val();
 
+
             this.model.set('name', updateName);
             this.model.set('description', updateDescription);
             var self=this;

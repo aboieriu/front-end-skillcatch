@@ -14,21 +14,7 @@ define(function (require, exports, module) {
             };
         },
         initialize: function(){
-        },
-        onRender: function(){
-            var collLength = this.collection.length;
-            var modelLenght = this.collection.models.length;
-            for(var j=0; j<modelLenght; j++){
-                for(var i=0; i<collLength;i++){
-                    document.getElementById("project-elements").innerHTML = this.collection.models[i].attributes[j].name;
-                }
-            }
-
-
-
-
+            this.templateHelpers = this.templateHelpers || {};
         }
     });
-
-
 });

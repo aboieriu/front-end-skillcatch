@@ -8,8 +8,8 @@ define(function(require, exports, module) {
 
     module.exports = Marionette.ItemView.extend({
 
-        id: 'update-taskPlan',
-        template: '#update-taskPlan-layout',
+        id: 'update-Task',
+        template: '#update-Task-layout',
 
         events:{
             'click #saveButton':'saveNewTask',
@@ -33,9 +33,11 @@ define(function(require, exports, module) {
 
             var updateName = $('#updateName').val();
             var updateDescription = $('#updateDescription').val();
+            var updateStatus = $('#updateStatus').val();
 
             this.model.set('name', updateName);
-            this.model.set('description', updateDescription);
+            this.model.set('description', updateStatus);
+            this.model.set('status', updateStatus);
             var self=this;
             this.model.save().always(function(){
                 Backbone.history.navigate('#show-projects' , true);

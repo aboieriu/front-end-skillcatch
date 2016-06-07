@@ -1,4 +1,4 @@
-#formContent.col-md-6
+#formContent.form-inline.col-md-4.col-md-offset-4
     h2.titleForm
         | Update TaskPlan
 
@@ -10,7 +10,6 @@
         |Descriere TaskPlan
         textarea#updateDescription.text.form-control(aria-describedby="basic-addon1")
             <%- model.description %>
-
     br
     button#saveButtonCom.btn.btn-success
         | Update taskPlan
