@@ -1,27 +1,26 @@
-define(function(require, exports, module) {
+define(function (require, exports, module) {
     var Backbone = require('backbone');
     var Marionette = require('marionette');
     var $ = require('jquery');
-    var Projects = require('./project-lists');
-    var Project = require('../models/projectCollection');
+    var Tasks = require('./task-list');
+    var Task = require('../models/taskCollection');
     module.exports = Marionette.Layout.extend({
-        template: '#assignedProjects-layout',
+        template: '#assignedTasks-layout',
         regions: {
-            showProjectDetails:'#assignedProjects'
+            showTaskDetails: '#assignedTaskItems'
         },
-        initialize: function(options){
-
+        initialize: function (options) {
 
 
         },
         onRender: function () {
             var self = this;
-            var projectDetailsModel = new Project();
-            projectDetailsModel.fetch().then(function(options){
-                self.showProjectDetails.show(new Projects({
-
+            var taskModel = new Task();
+            taskModel.fetch().then(function (options) {
+                debugger;
+                self.showTaskDetails.show(new Tasks({
                     collection: new Backbone.Collection(options)
-            }));
+                }));
 
             });
         }

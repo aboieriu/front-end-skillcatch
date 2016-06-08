@@ -2,24 +2,15 @@ define(function(require, exports, module) {
     var Backbone = require('backbone');
     var Marionette = require('marionette');
     var $ = require('jquery');
-    var ProjectModel = require('modules/showProjects/models/project');
-    var UserDetailsModel =require('../models/userDetailsModel');
-    var UserDetails = require('./userDetails');
     var Projects = require('./project-lists');
     var Project = require('../models/projectCollection');
     module.exports = Marionette.Layout.extend({
-        id: 'home',
-        template: '#home-layout',
+        template: '#assignedProjects-layout',
         regions: {
-            showUser:"#show-user",
-            showProjectDetails:'#show-ProjectDetails'
+            showProjectDetails:'#assignedProjects'
         },
         initialize: function(options){
-            var userModel = new UserDetailsModel({
-                userId:this.userId
-            });
-            this.model= new Project();
-            this.model.fetch();
+
 
 
         },
@@ -27,34 +18,12 @@ define(function(require, exports, module) {
             var self = this;
             var projectDetailsModel = new Project();
             projectDetailsModel.fetch().then(function(options){
-
-                var count= projectDetailsModel.length;
-                document.getElementById("count-project").innerHTML = count;
-
                 self.showProjectDetails.show(new Projects({
 
                     collection: new Backbone.Collection(options)
-
-                   /* var collLength = this.collection.length;
-                var modelLenght = this.collection.models.length;
-                for(var j=0; j<collLength; j++){
-                    for(var i=0; i<modelLenght;i++){
-
-                        return this.collection.models[i].attributes[j].name ;
-
-                    }
-                }
-*/
             }));
 
             });
-            this.model = new UserDetailsModel();
-            this.model.fetch().then(function(options) {
-                self.showUser.show(new UserDetails({
-                    model: new Backbone.Model(options),
-                }));
-            });
-
         }
     });
 

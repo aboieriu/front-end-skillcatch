@@ -3,6 +3,7 @@ define(function(require, exports, module) {
     var AppLayout = require('modules/app/views/layout');
     var NavbarController = require('modules/navigation/controllers/navbar');
     var BannerView = require('modules/banner/views/banner');
+    var FooterView = require('modules/footer/views/footer')
 
     var ShowLayoutInitializer = Marionette.Controller.extend({
         initialize: function() {
@@ -11,6 +12,7 @@ define(function(require, exports, module) {
                 this.appLayout = new AppLayout();
                 this.appLayout.sidebar.show( this.navbar.navbarView );
                 this.appLayout.banner.show(new BannerView());
+                this.appLayout.footer.show(new FooterView())
                 this.showLayout = function( view ) {
                     this.appLayout.container.show( view );
                 };

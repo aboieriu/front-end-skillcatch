@@ -6,7 +6,7 @@ define(function(require, exports, module) {
     var Marionette = require('marionette');
 
     module.exports = Marionette.ItemView.extend({
-        template: '#assignedProjects-project-item',
+        template: '#assignedTasks-task-item',
         initialize: function(){
             this.templateHelpers = this.templateHelpers || {};
         }

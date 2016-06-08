@@ -5,7 +5,7 @@ define(function(require, exports, module) {
     var Backbone = require('backbone');
     var Marionette = require('marionette');
 
-    module.exports = Marionette.ItemView.extend({
+    module.exports = Backbone.Marionette.ItemView.extend({
         template: '#login-form'
 
         , ui: {
@@ -15,10 +15,8 @@ define(function(require, exports, module) {
         }
 
         , events : {
-            'click #login-button':'handleLogin'
-        }
-        ,
-
+            'click #login-button': 'handleLogin'
+        },
         handleLogin: function(event) {
             event.preventDefault();
             var loginData = {
@@ -27,16 +25,22 @@ define(function(require, exports, module) {
             };
 
 
+
             $.ajax({
                 type: "POST",
                 url: window.baseApiPath +  "/authenticate/",
                 data: JSON.stringify(loginData),
                 success: function(data){
                     if (data && data.token) {
+
                         window.sessionStorage.authToken = data.token;
                         window.sessionStorage.skillCatchData = JSON.stringify({
                             userId:data.userId
                         });
+                       window.sessionStorage.userRole = JSON.stringify({
+                           roleId: data.roleId
+                       });
+
                         Backbone.history.navigate('/home', true);
                     }
                 },

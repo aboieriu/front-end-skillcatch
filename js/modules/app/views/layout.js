@@ -15,7 +15,8 @@ define(function(require, exports, module) {
          regions: {
             sidebar: '#sidebar-wrapper',
             banner: '.main-header',
-            container: '#page-content-wrapper'
+            container: '#page-content-wrapper',
+            footer:'.main-footer'
         },
         initialize: function() {
             this.render();

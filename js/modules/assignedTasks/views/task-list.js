@@ -4,17 +4,15 @@
 define(function (require, exports, module) {
     var Backbone = require('backbone');
     var Marionette = require('marionette');
-    var Project = require('./task-item');
+    var Task = require('./task-item');
 
     module.exports = Marionette.CollectionView.extend({
-        itemView: Project,
-        itemViewOptions: function(options) {
-            return {
-                groupId: this.options.groupId,
-            };
-        },
+        itemView: Task,
         initialize: function(){
             this.templateHelpers = this.templateHelpers || {};
+        },
+        onRender: function(){
+            debugger;
         }
     });
 });

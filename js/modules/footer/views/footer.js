@@ -5,21 +5,12 @@ define(function(require, exports, module) {
 
 
     module.exports = Marionette.ItemView.extend({
-        template: '#banner-banner',
+        template: '#footer-footer',
        // className: 'banner col-md-12',
-        events:{
-            'click #logout' :'logout'
-        },
         initialize: function() {
 
         },
         onRender: function () {
-        },
-        logout: function(){
-            if(window.sessionStorage.authToken){
-                window.sessionStorage.removeItem('authToken');
-                Backbone.history.navigate('/#login', true)
-            }
         }
     });
 });

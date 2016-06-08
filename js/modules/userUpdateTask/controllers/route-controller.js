@@ -7,9 +7,9 @@ define(function(require, exports, module) {
     var UpdateTaskPlan = require('../views/layout');
 
     var MapRouteController = Marionette.Controller.extend({
-        showUpdateTask: function (groupId,taskPlanId, taskId) {
+        showUserUpdateTask: function (taskId) {
 
-            app.showLayout(new UpdateTaskPlan({taskPlanId:taskPlanId, groupId:groupId, taskId:taskId}));
+            app.showLayout(new UpdateTaskPlan({taskId:taskId}));
         }
     });
 

@@ -17,7 +17,13 @@ define(function(require, exports, module) {
     var ShowTaskItem = require('modules/showTask/router');
     var ShowBadgeForTask = require('modules/showBadgeForTask/router');
     var ShowUserProjects = require('modules/showUserProjects/router');
+    var ShowAssignedProjects = require('modules/assignedProjects/router');
+    var ShowAssignedTasks= require('modules/assignedTasks/router');
+    var ShowUserBadge= require('modules/userBadge/router');
     var ShowUser = require('modules/showUser/router');
+    var ShowUpdateUserTask = require('modules/userUpdateTask/router');
+
+
     var RouterInitializer = Marionette.Controller.extend({
         initialize: function() {
             app.on('initialize:after', function(){
@@ -39,6 +45,10 @@ define(function(require, exports, module) {
                 new CreateBadge();
                 new ShowUser();
                 new ShowUserProjects();
+                new ShowAssignedProjects();
+                new ShowAssignedTasks();
+                new ShowUserBadge();
+                new ShowUpdateUserTask();
             });
 
 

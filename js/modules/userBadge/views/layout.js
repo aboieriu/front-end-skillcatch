@@ -2,12 +2,12 @@ define(function(require, exports, module) {
     var Backbone = require('backbone');
     var Marionette = require('marionette');
     var $ = require('jquery');
-    var Tasks = require('./task-list');
-    var Task = require('../models/taskCollection');
+    var Badges = require('./badge-list');
+    var Badge = require('../models/badgeCollection');
     module.exports = Marionette.Layout.extend({
-        template: '#assignedTasks-layout',
+        template: '#userBadge-layout',
         regions: {
-            showTaskDetails:'#assignedTaskItems'
+            showBadges:'#userBadges'
         },
         initialize: function(options){
 
@@ -15,11 +15,10 @@ define(function(require, exports, module) {
 
         },
         onRender: function () {
-            debugger;
             var self = this;
-            var taskModel = new Task();
+            var taskModel = new Badge();
             taskModel.fetch().then(function(options){
-                self.showTaskDetails.show(new Tasks({
+                self.showBadges.show(new Badges({
                     collection: new Backbone.Collection(options)
             }));
 

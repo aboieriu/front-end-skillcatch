@@ -9,7 +9,7 @@ define(function(require, exports, module) {
     module.exports = Marionette.ItemView.extend({
 
         id: 'update-Task',
-        template: '#update-Task-layout',
+        template: '#userUpdateTask-layout',
 
         events:{
             'click #saveButton':'saveNewTask',

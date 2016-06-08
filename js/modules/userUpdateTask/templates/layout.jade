@@ -3,20 +3,18 @@
         |Update Task
 
     .input-group
-        input#updateName.text.form-control(value!="<%- model.name %>" aria-describedby="basic-addon1")
+        input#updateName.text.form-control(value!="<%- obj.model.name %>" aria-describedby="basic-addon1")
         |Nume Task
     br
     .input-group
         |Descriere Task
         textarea#updateDescription.text.form-control(aria-describedby="basic-addon1")
-            <%- model.description %>
+            <%- obj.model.description %>
     br
     .input-group
         label(for="updateStatus")
             | Status &nbsp;&nbsp;
-        select#updateStatus.text.form-control(value!="<%- model.status %>" aria-describedby="basic-addon1")
-            option(value="Waiting Start")
-                | Waiting Start
+        select#updateStatus.text.form-control(value!="<%- obj.model.status %>" aria-describedby="basic-addon1")
             option(value='In Progress')
                 | In progress
             option(value='Completed')

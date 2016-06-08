@@ -12,13 +12,11 @@ table.table
     tbody
         tr
             td(style="text-align:center")
-                a(href!='#assignedProject/<%- obj.model.id %>')
                     <%- obj.model.name %>
             td(style="text-align:center")
                 <%- obj.model.description %>
             td(style="text-align:center")
                 <%- obj.model.status %>
             td(style="text-align:center")
-                a(href!='#update-project/<%- model.id %>')
+                a(href!='#userUpdate-task/<%- obj.model.id %>')
                     img(src="images/update.png" style="width:16px;height:16px")
-

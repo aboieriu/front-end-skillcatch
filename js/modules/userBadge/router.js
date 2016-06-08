@@ -6,7 +6,7 @@ define(function(require, exports, module) {
         controller: RouteController,
         appRoutes: {
             // our default route
-            'assignedTasks': 'showAssignedTasks',
+            'userBadge': 'showUserBadge',
 
         }
     });

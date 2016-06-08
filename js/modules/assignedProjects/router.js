@@ -6,8 +6,8 @@ define(function(require, exports, module) {
         controller: RouteController,
         appRoutes: {
             // our default route
-            'home': 'showHome',
-            '': 'showHome'
+            'assignedProjects': 'showAssignedProjects',
+
         }
     });
 });

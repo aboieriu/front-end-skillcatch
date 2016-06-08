@@ -1,6 +1,3 @@
-/**
- * Created by amusat on 5/23/2016.
- */
 define(function(require, exports, module) {
     var Backbone = require('backbone');
 
@@ -8,8 +5,11 @@ define(function(require, exports, module) {
     module.exports = Backbone.Model.extend({
         url :function() {
 
-            return window.baseApiPath + '/api/projectGroup/' + this.get('groupId') + '/taskPlan/'
-                + this.get('taskPlanId') + '/task/' + this.get('taskId');
+            var skillCatchData = window.sessionStorage.skillCatchData;
+            if (!skillCatchData) {
+                throw new Error("Unable to find logged user data");
+            }
+            return   window.baseApiPath + '/api/user/' + JSON.parse(skillCatchData).userId + '/tasks/' + this.get('taskId');
         }
     });
 });

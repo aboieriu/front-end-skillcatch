@@ -9,7 +9,7 @@ define(function(require, exports, module) {
         controller: RouteController,
         appRoutes: {
             // our default route
-            'show-project/:groupId/show-taskPlan/:taskPlanId/update-task/:id': 'showUpdateTask'
+            'userUpdate-task/:id': 'showUserUpdateTask'
         }
     });
 });

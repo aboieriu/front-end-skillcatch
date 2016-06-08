@@ -5,6 +5,7 @@ define(function(require, exports, module) {
     module.exports = Backbone.Model.extend({
         url :function() {
             var skillCatchData = window.sessionStorage.skillCatchData;
+
             if (!skillCatchData) {
                 throw new Error("Unable to find logged user data");
             }

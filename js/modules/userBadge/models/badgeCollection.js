@@ -10,7 +10,7 @@ define(function(require, exports, module) {
             if (!skillCatchData) {
                 throw new Error("Unable to find logged user data");
             }
-            return   window.baseApiPath + '/api/user/' + JSON.parse(skillCatchData).userId + '/tasks';
+            return   window.baseApiPath + '/api/user/' + JSON.parse(skillCatchData).userId + '/badges';
         }
     });
 });

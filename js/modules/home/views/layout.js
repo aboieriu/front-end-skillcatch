@@ -2,17 +2,14 @@ define(function(require, exports, module) {
     var Backbone = require('backbone');
     var Marionette = require('marionette');
     var $ = require('jquery');
-    var ProjectModel = require('modules/showProjects/models/project');
     var UserDetailsModel =require('../models/userDetailsModel');
     var UserDetails = require('./userDetails');
-    var Projects = require('./project-lists');
     var Project = require('../models/projectCollection');
     module.exports = Marionette.Layout.extend({
-        id: 'home',
+        id: 'home-layout',
         template: '#home-layout',
         regions: {
             showUser:"#show-user",
-            showProjectDetails:'#show-ProjectDetails'
         },
         initialize: function(options){
             var userModel = new UserDetailsModel({
@@ -31,21 +28,6 @@ define(function(require, exports, module) {
                 var count= projectDetailsModel.length;
                 document.getElementById("count-project").innerHTML = count;
 
-                self.showProjectDetails.show(new Projects({
-
-                    collection: new Backbone.Collection(options)
-
-                   /* var collLength = this.collection.length;
-                var modelLenght = this.collection.models.length;
-                for(var j=0; j<collLength; j++){
-                    for(var i=0; i<modelLenght;i++){
-
-                        return this.collection.models[i].attributes[j].name ;
-
-                    }
-                }
-*/
-            }));
 
             });
             this.model = new UserDetailsModel();

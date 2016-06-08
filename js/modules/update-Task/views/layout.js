@@ -36,7 +36,7 @@ define(function(require, exports, module) {
             var updateStatus = $('#updateStatus').val();
 
             this.model.set('name', updateName);
-            this.model.set('description', updateStatus);
+            this.model.set('description', updateDescription);
             this.model.set('status', updateStatus);
             var self=this;
             this.model.save().always(function(){
