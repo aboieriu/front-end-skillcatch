@@ -4,7 +4,7 @@
 define(function (require, exports, module) {
     var Backbone = require('backbone');
     var Marionette = require('marionette');
-    var Project = require('./project-items');
+    var Project = require('./task-item');
 
     module.exports = Marionette.CollectionView.extend({
         itemView: Project,
