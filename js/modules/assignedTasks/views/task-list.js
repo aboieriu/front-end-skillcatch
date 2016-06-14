@@ -12,7 +12,7 @@ define(function (require, exports, module) {
             this.templateHelpers = this.templateHelpers || {};
         },
         onRender: function(){
-            debugger;
+
         }
     });
 });

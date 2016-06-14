@@ -9,6 +9,9 @@ define(function(require, exports, module) {
         template: '#assignedTasks-task-item',
         initialize: function(){
             this.templateHelpers = this.templateHelpers || {};
+        },
+        onRender: function(){
+            debugger;
         }
     });
 });

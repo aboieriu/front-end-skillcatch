@@ -17,7 +17,6 @@ define(function (require, exports, module) {
             var self = this;
             var taskModel = new Task();
             taskModel.fetch().then(function (options) {
-                debugger;
                 self.showTaskDetails.show(new Tasks({
                     collection: new Backbone.Collection(options)
                 }));
