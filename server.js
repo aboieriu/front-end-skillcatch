@@ -25,7 +25,7 @@ if( ARGS['--help'] ) {
 }
 
 var WWW_DIR = ( ARGS['--dev'] ) ? './' : './deploy';
-var SERVER_PORT = ( ARGS['--port'] ) ? ARGS['--port'] : 81;
+var SERVER_PORT = ( ARGS['--port'] ) ? ARGS['--port'] : 8089;
 
 var static = require('node-static');
 var file = new static.Server( WWW_DIR );

@@ -24,25 +24,12 @@ define(function(require, exports, module) {
                 , password: this.ui.$passwordInput.val(),
             };
 
-
-
             $.ajax({
                 type: "POST",
                 url: window.baseApiPath +  "/authenticate/",
                 data: JSON.stringify(loginData),
                 success: function(data){
-                    if (data && data.token) {
-
-                        window.sessionStorage.authToken = data.token;
-                        window.sessionStorage.skillCatchData = JSON.stringify({
-                            userId:data.userId
-                        });
-                       window.sessionStorage.userRole = JSON.stringify({
-                           roleId: data.roleId
-                       });
-
-                        Backbone.history.navigate('/home', true);
-                    }
+                    Backbone.history.navigate('/home', true);
                 },
                 contentType: "application/json;charset=utf-8"
             });

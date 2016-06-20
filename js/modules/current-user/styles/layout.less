@@ -1,0 +1,39 @@
+.user-details-container {
+  background-color:darken(@cs-color-6, 5%);
+  text-align:center;
+  color:white;
+  margin-top:-7px;
+  padding-top:7px;
+  padding-bottom:20px;
+  border-bottom:1px solid @cs-color-2;
+  .user-names {
+    font-wight:bold;
+    font-size:12px;
+  }
+  .user-email {
+    font-size:10px;
+    font-style: italic;
+    .border {
+      border-bottom:1px dotted white;
+    }
+  }
+  .user-avatar {
+    border: 5px solid @cs-color-1;
+    height: 90px;
+    width: 90px;
+    display: block;
+    border-radius: 45px;
+    box-shadow: 1px 1px 1px rgba(0,0,0, 0.7);
+    margin:10px auto;
+  }
+
+  .user-avatar {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .user-avatar img {
+    border-radius: 40px;
+    width: 80px;
+    height: 80px;
+  }
+}

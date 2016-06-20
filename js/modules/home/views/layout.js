@@ -9,7 +9,7 @@ define(function(require, exports, module) {
         id: 'home-layout',
         template: '#home-layout',
         regions: {
-            showUser:"#show-user",
+            showUser:"#show-user"
         },
         initialize: function(options){
             var userModel = new UserDetailsModel({
@@ -24,10 +24,8 @@ define(function(require, exports, module) {
             var self = this;
             var projectDetailsModel = new Project();
             projectDetailsModel.fetch().then(function(options){
-
                 var count= projectDetailsModel.length;
                 document.getElementById("count-project").innerHTML = count;
-
 
             });
             this.model = new UserDetailsModel();
@@ -36,7 +34,6 @@ define(function(require, exports, module) {
                     model: new Backbone.Model(options),
                 }));
             });
-
         }
     });
 
