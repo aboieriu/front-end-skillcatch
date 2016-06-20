@@ -4,9 +4,10 @@ define(function (require, exports, module) {
 
     app.addInitializer(function () {
         $.ajaxSetup({
-            beforeSend: function(xhr, setttings){
-                xhr.setRequestHeader('X-Auth-Token', app.getAuthToken());
+            xhrFields: {
+                withCredentials: true
             }
+            , crossDomain: true
             , complete: function (response) {
                 if (response.status === 401) {
                     Backbone.history.navigate('/login', true);
