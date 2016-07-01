@@ -34,6 +34,14 @@ define(function(require, exports, module) {
                         Backbone.history.navigate('/home', true);
                     })
                 },
+                complete: function (response) {
+                    if (response.status === 401) {
+                        debugger;
+                        document.getElementById("showError").style.display = "block";
+                        document.getElementById("showError").style.color = "red";
+
+                    }
+                },
                 contentType: "application/json;charset=utf-8"
             });
         }
