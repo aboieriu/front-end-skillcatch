@@ -1,5 +1,4 @@
 define(function(require, exports, module) {
-    var $ = require('jquery');
     var Marionette = require('marionette');
     var app = require('app');
     var _ = require('underscore');

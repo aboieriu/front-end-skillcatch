@@ -1,7 +1,6 @@
 define(function (require, exports, module) {
     var Backbone = require('backbone');
     var Marionette = require('marionette');
-    var $ = require('jquery');
     var Tasks = require('./task-list');
     var Task = require('../models/taskCollection');
     module.exports = Marionette.Layout.extend({

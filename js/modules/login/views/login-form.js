@@ -2,8 +2,9 @@
  * Created by amusat on 4/28/2016.
  */
 define(function(require, exports, module) {
-    var Backbone = require('backbone');
+    var app = require('app');
     var Marionette = require('marionette');
+    var Backbone = require('backbone');
 
     module.exports = Backbone.Marionette.ItemView.extend({
         template: '#login-form'
@@ -21,15 +22,17 @@ define(function(require, exports, module) {
             event.preventDefault();
             var loginData = {
                 username: this.ui.$usernameInput.val()
-                , password: this.ui.$passwordInput.val(),
+                , password: this.ui.$passwordInput.val()
             };
 
             $.ajax({
                 type: "POST",
-                url: window.baseApiPath +  "/authenticate/",
+                url: window.baseApiPath +  "/authenticate",
                 data: JSON.stringify(loginData),
                 success: function(data){
-                    Backbone.history.navigate('/home', true);
+                    app.master.fetch().then(function(){
+                        Backbone.history.navigate('/home', true);
+                    })
                 },
                 contentType: "application/json;charset=utf-8"
             });

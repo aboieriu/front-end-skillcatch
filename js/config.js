@@ -1,7 +1,7 @@
 require.config({
     paths: {
         /* Bower Libraries */
-        jquery: '../bower_components/jquery/dist/jquery.min',
+        jquery: '../bower_components/jquery/jquery.min',
         underscore: '../bower_components/underscore/underscore-min',
         backbone: '../bower_components/backbone/backbone',
         backgrid: '../bower_components/backgrid/lib/backgrid',

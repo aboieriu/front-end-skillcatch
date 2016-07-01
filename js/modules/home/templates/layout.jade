@@ -1,23 +1,11 @@
 #home-layout
 	.container-fluid.xyz
-		.row
+		.row.layout-separator
 			.col-lg-12
-				.col-lg-4.col-xs-8.col-lg-offset-4.col-xs-offset-2
-					#show-user
+				#user-badges
+		.row.layout-separator
 			.col-lg-12
-			.col-lg-3.col-xs-6
-				.small-box.bg-aqua
-					.inner
-						h3#count-project
-						p
-							| Projects
-					.icon
-						i(class="ion ion-grid")
-			.col-lg-3.col-xs-6
-				.small-box.bg-green
-					.inner
-						h3#count-task
-						p
-							| Tasks completed
-					.icon
-						i(class="ion ion-android-checkmark-circle")
+				#assigned-projects
+		.row.layout-separator
+			.col-lg-12
+				#individual-task-plans

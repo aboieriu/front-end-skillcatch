@@ -10,16 +10,17 @@ define(function(require, exports, module) {
         events:{
             'click #logout' :'logout'
         },
-        initialize: function() {
 
-        },
-        onRender: function () {
-        },
         logout: function(){
-            if(window.sessionStorage.authToken){
-                window.sessionStorage.removeItem('authToken');
-                Backbone.history.navigate('/#login', true)
-            }
+            $.ajax({
+                type: "POST",
+                url: window.baseApiPath +  "/logout/",
+                success: function(data){
+                    Backbone.history.navigate('/#login', true);
+                    window.location.reload();
+                }
+            });
+
         }
     });
 });

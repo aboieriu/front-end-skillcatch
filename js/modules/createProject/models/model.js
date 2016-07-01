@@ -7,6 +7,8 @@ define(function(require, exports, module) {
 
     module.exports = Backbone.Model.extend({
 
-        url: 'http://localhost:8080/skillcatch/api/projectGroup'
+        url: function(){
+            return window.baseApiPath + '/api/projectGroup'
+        }
     });
 });

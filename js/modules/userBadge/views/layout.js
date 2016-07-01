@@ -1,7 +1,6 @@
 define(function(require, exports, module) {
     var Backbone = require('backbone');
     var Marionette = require('marionette');
-    var $ = require('jquery');
     var Badges = require('./badge-list');
     var Badge = require('../models/badgeCollection');
     module.exports = Marionette.Layout.extend({

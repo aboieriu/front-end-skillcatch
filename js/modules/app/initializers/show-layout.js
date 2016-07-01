@@ -3,11 +3,13 @@ define(function(require, exports, module) {
     var AppLayout = require('modules/app/views/layout');
     var NavbarController = require('modules/navigation/controllers/navbar');
     var BannerView = require('modules/banner/views/banner');
-    var FooterView = require('modules/footer/views/footer')
+    var FooterView = require('modules/footer/views/footer');
+    var CurrentUserModel = require('modules/current-user/model/current-user');
 
     var ShowLayoutInitializer = Marionette.Controller.extend({
         initialize: function() {
             app.addInitializer(function() {
+                app.master = new CurrentUserModel();
                 this.navbar = new NavbarController();
                 this.appLayout = new AppLayout();
                 this.appLayout.sidebar.show( this.navbar.navbarView );
@@ -19,6 +21,7 @@ define(function(require, exports, module) {
                 this.closeLayout = function() {
                     this.appLayout.container.close();
                 };
+                app.master.fetch();
             });
         }
     });

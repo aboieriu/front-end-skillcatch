@@ -50,8 +50,6 @@ define(function(require, exports, module) {
                 new ShowUserBadge();
                 new ShowUpdateUserTask();
             });
-
-
         }
     });
 
