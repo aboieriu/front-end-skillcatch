@@ -36,7 +36,6 @@ define(function(require, exports, module) {
                 },
                 complete: function (response) {
                     if (response.status === 401) {
-                        debugger;
                         document.getElementById("showError").style.display = "block";
                         document.getElementById("showError").style.color = "red";
 
