@@ -4,7 +4,7 @@ define(function(require, exports, module) {
 
     module.exports = Marionette.Layout.extend({
         id: 'showBadges',
-        template: '#showBadges-layout',
+        template: '#show-badges-layout',
 
         regions: {
             showBadges: "#show-badges"

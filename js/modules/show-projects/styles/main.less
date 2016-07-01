@@ -1,0 +1,49 @@
+@import "project.less";
+.projects-container {
+  > ul {
+    >li {
+      width:100%;
+      min-width:100%;
+      margin-top:10px;
+    }
+  }
+  .detailed-project-overview {
+    .project-overview-head {
+      display:flex;
+      .project-header {
+        text-align:left;
+        width:70%;
+      }
+      .project-description {
+        font-size:12px;
+        margin-top:10px;
+      }
+      .project-body-container {
+        width:30%;
+      }
+    }
+    .project-taskplans {
+      .heading {
+        font-size: 12px;
+        background-color: #4E4D55;
+        color: #fff;
+        padding: 5px 10px;
+        text-align: left;
+      }
+      .taskplan-container {
+        width:100%;
+        .taskplan-overview-container {
+          font-size:20px;
+          padding:10px;
+          color:rgba(0,0,0,0.6);
+          font-family:'Open Sans';
+          .taskplan-description {
+            font-size:12px;
+            margin-top:10px;
+          }
+        }
+      }
+    }
+
+  }
+}

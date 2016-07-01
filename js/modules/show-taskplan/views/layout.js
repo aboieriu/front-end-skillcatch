@@ -10,7 +10,7 @@ define(function(require, exports, module) {
 
     module.exports = Marionette.Layout.extend({
         id: 'showTaskPlan',
-        template: '#showTaskPlan-layout',
+        template: '#show-taskplan-layout',
 
         regions: {
             showTaskPlan: "#show-project-taskPlan-item",
