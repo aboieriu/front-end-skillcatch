@@ -1,0 +1,50 @@
+.task-plan-container
+    .heading
+        <%= obj.model.name %>
+    .task-plan-content
+        .statistics
+            .available
+                .heading
+                    |Rewards available
+                .content
+                    .label.label-default
+                        <%= obj.getAvailableBadges() %>
+                        |badge
+                    .label.label-default
+                        <%= obj.getAvailablePoints() %>
+                        |points
+            .awarded
+                .heading
+                    |Rewards gained
+                .content
+                    .label.label-default
+                        <%= obj.getAwardedBadges() %>
+                        |badge
+                    .label.label-default
+                        <%= obj.getAwardedPoints() %>
+                        |points
+                .content-completed
+                    .heading
+                        |Task plan completed
+                    .badge-container
+                        .badges-available-container
+                            .heading
+                                |Awarded
+                            .content
+                                |<%= obj.getAwardedBadges() %>
+                        .badge
+                            figure.hexagon-outer
+                                figure.hexagon-mask
+                                figure.hexagon-inner.green
+                                span.overlay
+                    .label.label-default
+                        <%= obj.getAwardedPoints() %>
+                        |points
+        .task-plan-tasks-container
+            .available.card-2
+                .heading
+                    |Tasks left to do
+                .content
+                    <%= obj.getAvailableTasks() %>
+                    .tasks-label
+                        |tasks

@@ -1,3 +1,9 @@
+@color1: #5271C2;
+@color2: #35a541;
+@color3: #bdb235;
+@color4: #db6623;
+@color5: #3e5eb3;
+@color6: #aa9e5c;
 .blur-item {
   filter: blur(5px);
   -webkit-filter: blur(5px);
@@ -144,6 +150,30 @@ figure[class^=hexagon]:after {
     }
     &:after {
       border-color: grey transparent;
+    }
+  }
+}
+
+.badge-container {
+  text-shadow: 2px 2px 0px rgba(150, 150, 150, 0.32);
+  .badges-available-container {
+    position: relative;
+    z-index: 2;
+    top: 6px;
+    height:0px;
+    overflow: visible;
+    .heading {
+      width: 64px;
+      text-align: center;
+      padding: 1px 0;
+      color: #fff;
+      font-size: 10px;
+      margin: 0 auto;
+    }
+    .content {
+      font-size: 30px;
+      position: relative;
+      top: -5px;
     }
   }
 }
