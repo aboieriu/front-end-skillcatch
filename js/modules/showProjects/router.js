@@ -8,8 +8,8 @@ define(function(require, exports, module) {
     module.exports = Marionette.AppRouter.extend({
         controller: RouteController,
         appRoutes: {
-            'show-projects': 'showProjects',
-            'show-projects/:id': 'showProjects'
+            'projects': 'showProjects',
+            'projects/:id': 'showProjects'
         }
     });
 });

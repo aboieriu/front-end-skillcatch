@@ -8,7 +8,7 @@ define(function(require, exports, module) {
     module.exports = Marionette.AppRouter.extend({
         controller: RouteController,
         appRoutes: {
-            'show-badges': 'showBadges'
+            'badges': 'showBadges'
         }
     });
 });

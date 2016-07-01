@@ -1,13 +1,11 @@
-define(function(require, exports, module) {
+define(function (require, exports, module) {
     var Backbone = require('backbone');
     var Marionette = require('marionette');
-
     module.exports = Marionette.Layout.extend({
-        id: 'showBadges',
-        template: '#showBadges-layout',
-
+        template: '#assigned-tasks-layout',
         regions: {
-            showBadges: "#show-badges"
+            showTaskDetails: '#assignedTaskItems'
         }
     });
+
 });

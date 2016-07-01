@@ -8,5 +8,9 @@ define(function(require, exports, module) {
         , initialize: function(){
             this.listenTo(this.collection, 'sync', this.render);
         }
+        , render: function(){
+            this.collection.sort();
+            Marionette.CollectionView.prototype.render.apply(this, arguments);
+        }
     });
 });

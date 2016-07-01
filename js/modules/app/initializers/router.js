@@ -18,7 +18,7 @@ define(function(require, exports, module) {
     var ShowBadgeForTask = require('modules/showBadgeForTask/router');
     var ShowUserProjects = require('modules/showUserProjects/router');
     var ShowAssignedProjects = require('modules/assignedProjects/router');
-    var ShowAssignedTasks= require('modules/assignedTasks/router');
+    var ShowAssignedTasks= require('modules/assigned-tasks/router');
     var ShowUserBadge= require('modules/userBadge/router');
     var ShowUser = require('modules/showUser/router');
     var ShowUpdateUserTask = require('modules/userUpdateTask/router');
