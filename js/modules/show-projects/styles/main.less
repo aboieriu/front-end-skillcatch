@@ -1,17 +1,29 @@
-@import "project.less";
-.projects-container {
+.projects-container, .project-container {
+  margin-bottom:30px;
   > ul {
     >li {
       width:100%;
       min-width:100%;
       margin-top:10px;
       cursor:inherit !important;
+      margin-right:0px !important;
+      margin-bottom:20px;
+    }
+  }
+  .completed {
+    .total {
+      display:none;
+    }
+    .done {
+      width:100% !important;
     }
   }
   .detailed-project-overview {
     .project-overview-head {
       display:flex;
+      background-color:rgba(0,0,0,0.1);
       .project-header {
+        background-color:transparent !important;
         text-align:left;
         width:70%;
       }
@@ -21,6 +33,13 @@
       }
       .project-body-container {
         width:30%;
+      }
+
+      .project-details {
+        .btn {
+          font-size:12px;
+          margin-top:10px;
+        }
       }
     }
     .project-taskplans-container {
@@ -60,3 +79,9 @@
     }
   }
 }
+.projects-container {
+  .tasks-main-container  {
+    display:none;
+  }
+}
+@import "project.less";

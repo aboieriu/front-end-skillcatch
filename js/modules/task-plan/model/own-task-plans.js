@@ -1,8 +1,9 @@
 define(function(require, exports, module) {
     var Backbone = require('backbone');
-
+    var TaskPlan = require('./task-plan');
     module.exports = Backbone.Collection.extend({
-        url : function(){
+        model: TaskPlan
+        , url : function(){
             return window.baseApiPath +'/api/loggedUser/own-tasks-plans';
         }
         , comparator: function(model) {

@@ -8,8 +8,14 @@ define(function(require, exports, module) {
             taskPlanContainer: '.project-taskplans'
         }
         , onRender:function() {
-            var taskPlanCollection = new Backbone.Collection(this.model.get('taskPlans'));
-            this.ui.taskPlanContainer.html(new TaskPlansCollectionView({collection:taskPlanCollection}).render().$el);
+            if (this.model.isCompleted()){
+                this.$el.addClass('completed');
+            }
+            this.taskPlanCollection = new Backbone.Collection(this.model.get('taskPlans'));
+            this.listenTo(this.taskPlanCollection, 'task-updated', function(){
+                this.model.trigger('task-updated');
+            });
+            this.ui.taskPlanContainer.html(new TaskPlansCollectionView({collection:this.taskPlanCollection}).render().$el);
         }
     });
 });

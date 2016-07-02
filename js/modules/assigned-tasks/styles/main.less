@@ -1,1 +1,82 @@
-@import "map.less";
+.individual-task-plans, .individual-task-plan {
+  margin-bottom:30px;
+  > ul {
+    >li {
+      width:100%;
+      min-width:100%;
+      margin-top:10px;
+      cursor:inherit !important;
+      margin-right:0px !important;
+      margin-bottom:20px;
+    }
+  }
+  .completed {
+    .total {
+      display:none;
+    }
+    .done {
+      width:100% !important;
+    }
+  }
+  .heading {
+    font-size: 12px;
+    background-color: #4E4D55;
+    color: #fff;
+    padding: 5px 10px;
+    text-align: left;
+  }
+  .project-taskplans {
+    padding:10px 10px 0px 10px;
+  }
+  .taskplan-container {
+    width:100%;
+    margin-bottom:10px;
+    display:flex;
+    background-color:rgba(0,0,0,0.1);
+    .taskplan-overview-container {
+      font-size:20px;
+      padding:10px;
+      color:rgba(0,0,0,0.6);
+      font-family:'Open Sans';
+      width:70%;
+      .taskplan-description {
+        font-size:12px;
+        margin-top:10px;
+      }
+    }
+    .badges-container {
+      width:30%;
+      background-color:transparent !important;
+      > ul {
+        display:flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+  .detailed-project-overview {
+    .project-overview-head {
+      display: flex;
+      background-color: rgba(0, 0, 0, 0.1);
+      .project-header {
+        background-color: transparent !important;
+        text-align: left;
+        width: 70%;
+      }
+      .project-description {
+        font-size: 12px;
+        margin-top: 10px;
+      }
+      .project-body-container {
+        width: 30%;
+      }
+
+      .project-details {
+        .btn {
+          font-size: 12px;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+@import 'task';

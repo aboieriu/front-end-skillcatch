@@ -1,10 +1,9 @@
 define(function(require, exports, module) {
     var Marionette = require('marionette');
-    var AssignedProjectItemView = require('./assigned-project-item-view');
-
+    var TaskPlanItemView = require('./taskplan-item-view');
     module.exports = Marionette.CollectionView.extend({
-        tagName:'ul'
-        , itemView: AssignedProjectItemView
+        itemView:TaskPlanItemView
+        , tagName:'ul'
         , initialize: function(){
             this.listenTo(this.collection, 'sync', this.render);
         }

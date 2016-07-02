@@ -1,13 +1,25 @@
-.assigned-projects-container {
+.assigned-projects-container, .individual-task-plans, .individual-task-plan {
   background-color:white;
   padding:10px;
+  .completed {
+    min-width:200px !important;
+    .total {
+      display:none;
+    }
+    .done {
+      width:100% !important;
+    }
+  }
   > ul {
     margin:0px;
     padding:0px;
     display:flex;
+    flex-flow:row wrap;
     > li {
       float:left;
       min-width:400px;
+      margin-right:10px;
+      margin-bottom:10px;
       cursor:pointer;
       .project-header {
         background-color:white;

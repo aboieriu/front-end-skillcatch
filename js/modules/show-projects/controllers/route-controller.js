@@ -4,13 +4,16 @@
 define(function(require, exports, module) {
     var Marionette = require('marionette');
     var app = require('app');
-    var NewShowProjects = require('../views/layout');
+    var ProjectsLayout = require('../views/layout');
+    var ProjectLayout = require('../views/project-layout');
 
 
     var MapRouteController = Marionette.Controller.extend({
-        showProjects: function (id) {
-
-            app.showLayout(new NewShowProjects({id:id}));
+        showProjects: function () {
+            app.showLayout(new ProjectsLayout());
+        }
+        , showProject: function (id) {
+            app.showLayout(new ProjectLayout({projectId:id}));
         }
     });
 

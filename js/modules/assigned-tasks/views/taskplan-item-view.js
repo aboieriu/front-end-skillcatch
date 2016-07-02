@@ -1,14 +1,17 @@
 define(function(require, exports, module) {
     var Marionette = require('marionette');
-
+    var TaskCollection = require('../../task/model/tasks');
+    var TaskCollectionView = require('../../show-projects/views/taskplan-tasks-collection-view');
+    var BadgeCollection = require('../../badge/model/UserBadgesCollection');
+    var BadgeCollectionView = require('../../badge/view/user-badges-collection-view');
     module.exports = Marionette.ItemView.extend({
-        tagName:'li'
-        , className:'card-2'
-        , template: '#assigned-project-assigned-project-item-view'
-        , events: {
-            'click':'goToProject'
+        template: '#assigned-tasks-task-item-view'
+        , tagName:'li'
+        , ui: {
+            tasks: '.tasks-container'
+            , badgesContainer: '.badges-container'
         }
-        , initialize: function() {
+        , initialize: function(){
             _.bindAll(this, 'getAvailableBadges', 'getAwardedBadges', 'getAvailablePoints', 'getAwardedPoints', 'getAvailableTasks', 'getAwardedTasks');
             this.templateHelpers = this.templateHelpers || {};
 
@@ -19,13 +22,19 @@ define(function(require, exports, module) {
             this.templateHelpers.getAvailableTasks = this.getAvailableTasks;
             this.templateHelpers.getAwardedTasks = this.getAwardedTasks;
         }
-        , goToProject: function(){
-            Backbone.history.navigate("#projects/"+this.model.get('id'), true);
-        }
-        , onRender: function(){
+        , onRender:function() {
             if (this.model.isCompleted()){
                 this.$el.addClass('completed');
             }
+            this.taskCollection = new TaskCollection(this.model.get('tasks'));
+            this.badgesCollection = new BadgeCollection(this.model.get('badges'));
+            this.listenTo(this.taskCollection, 'task-updated', function(){
+                this.model.trigger('task-updated');
+            });
+
+            this.badgesCollection.sort();
+            this.ui.tasks.html(new TaskCollectionView({collection:this.taskCollection}).render().$el);
+            this.ui.badgesContainer.html(new BadgeCollectionView({collection:this.badgesCollection}).render().$el);
         }
 
         , getAvailableBadges: function(){
@@ -63,25 +72,18 @@ define(function(require, exports, module) {
         }
 
 
-        , _getAllBadges: function(project) {
+        , _getAllBadges: function(taskPlan) {
             var badges = [];
-            var taskPlans = project.get('taskPlans');
-            _.each(taskPlans, function(taskPlan){
-                badges = badges.concat(taskPlan.badges);
-                _.each(taskPlan.tasks, function(task){
-                    badges = badges.concat(task.badges);
-                });
+            var tasks = taskPlan.get('tasks');
+            badges = badges.concat(taskPlan.get('badges'));
+            _.each(tasks, function(task){
+                badges = badges.concat(task.badges);
             });
             return badges;
         }
 
-        , _getAllTasks: function(project) {
-            var tasks = [];
-            var taskPlans = project.get('taskPlans');
-            _.each(taskPlans, function(taskPlan){
-                tasks = tasks.concat(taskPlan.tasks);
-            });
-            return tasks;
+        , _getAllTasks: function(taskPlan) {
+            return taskPlan.get('tasks');
         }
 
         , _getAvailableBadges: function(){

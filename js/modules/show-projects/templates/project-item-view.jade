@@ -5,6 +5,9 @@
                 <%= obj.model.name %>
             .project-description
                 <%= obj.model.description %>
+            .project-details
+                a(href!="<%= '#projects/'+obj.model.id %>").btn.btn-primary
+                    | View project details
         .project-body-container
             .points
                 .total

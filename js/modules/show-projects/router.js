@@ -9,7 +9,7 @@ define(function(require, exports, module) {
         controller: RouteController,
         appRoutes: {
             'projects': 'showProjects',
-            'projects/:id': 'showProjects'
+            'projects/:id': 'showProject'
         }
     });
 });
