@@ -3,7 +3,6 @@ define(function (require, exports, module) {
     var Backbone = require('backbone');
 
     app.addInitializer(function () {
-        console.log('init');
         $.ajaxSetup({
             xhrFields: {
                 withCredentials: true

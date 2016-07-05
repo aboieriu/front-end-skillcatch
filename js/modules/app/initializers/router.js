@@ -5,6 +5,7 @@ define(function(require, exports, module) {
     var LoginRouter = require('modules/login/router');
     var ShowBadges = require('modules/show-badges/router');
     var ShowAssignedTasks= require('modules/assigned-tasks/router');
+    var AdminProjects= require('modules/admin-project/router');
 
 
     var RouterInitializer = Marionette.Controller.extend({
@@ -15,6 +16,7 @@ define(function(require, exports, module) {
                 new LoginRouter();
                 new ShowBadges();
                 new ShowAssignedTasks();
+                new AdminProjects();
             });
         }
     });

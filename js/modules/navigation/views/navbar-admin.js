@@ -3,7 +3,7 @@ define(function(require, exports, module) {
     var Marionette = require('marionette');
     var CurrentUserView = require('modules/current-user/view/current-user-view');
     module.exports = Marionette.Layout.extend({
-        template: '#navigation-navbar'
+        template: '#navigation-navbar-admin'
         , className:'navbar-content'
         , regions: {
             currentUserDetails:'#user-details-region'
@@ -13,6 +13,7 @@ define(function(require, exports, module) {
             this.currentUserModel = app.master;
         }
         , onRender: function() {
+            this.$el.addClass('admin');
             this.currentUserDetails.show(new CurrentUserView({model:this.currentUserModel}));
         }
     });

@@ -1,0 +1,20 @@
+.card-header
+    i.fa.fa-file-text
+    | Task plans
+.card-1.layout-container
+    table.table.table-striped.table-hover.table-condensed.taskplans-container
+        thead
+            tr
+                td
+                    | Name
+                td
+                    | Description
+                td
+            tr
+                td
+                    input(name="name").form-name
+                td
+                    textarea(name="description", style="width:100%").form-description
+                td
+                    button.btn.btn-primary.addTaskplan
+                        | Add

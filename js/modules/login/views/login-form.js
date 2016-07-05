@@ -30,7 +30,8 @@ define(function(require, exports, module) {
                 url: window.baseApiPath +  "/authenticate",
                 data: JSON.stringify(loginData),
                 success: function(data){
-                    app.master.fetch().then(function(){
+                    app.init = app.master.fetch();
+                    app.init.then(function(loggedUser){
                         Backbone.history.navigate('/home', true);
                     })
                 },

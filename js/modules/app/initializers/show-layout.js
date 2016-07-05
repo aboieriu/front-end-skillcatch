@@ -9,10 +9,10 @@ define(function(require, exports, module) {
     var ShowLayoutInitializer = Marionette.Controller.extend({
         initialize: function() {
             app.addInitializer(function() {
+                var self = this;
                 app.master = new CurrentUserModel();
                 this.navbar = new NavbarController();
                 this.appLayout = new AppLayout();
-                this.appLayout.sidebar.show( this.navbar.navbarView );
                 this.appLayout.banner.show(new BannerView());
                 this.appLayout.footer.show(new FooterView())
                 this.showLayout = function( view ) {
@@ -21,7 +21,15 @@ define(function(require, exports, module) {
                 this.closeLayout = function() {
                     this.appLayout.container.close();
                 };
-                app.master.fetch();
+
+                this.listenTo(app.master, 'sync', function(){
+                    if (app.master.get('admin')) {
+                        self.appLayout.sidebar.show( self.navbar.navbarViewAdmin );
+                    } else {
+                        self.appLayout.sidebar.show( self.navbar.navbarView );
+                    }
+                });
+                app.init = app.master.fetch();
             });
         }
     });
