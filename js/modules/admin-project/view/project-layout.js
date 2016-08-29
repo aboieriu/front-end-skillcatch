@@ -14,7 +14,7 @@ define(function(require, exports, module) {
         , ui: {
               taskPlans:'.taskplans-container'
             , projectDetails:'.project-details-container'
-            , projectUsers:'.project-users'
+            , users:'.project-users'
             , usersToAssign:'.users-to-assign'
 
         }
@@ -27,7 +27,7 @@ define(function(require, exports, module) {
             this.taskPlanModel.fetch().then(function(){
                 self.ui.projectDetails.html(new ProjectDetails({model: self.taskPlanModel}).render().$el);
                 self.ui.taskPlans.html(new Taskplans({model: self.taskPlanModel}).render().$el);
-                self.ui.projectUsers.html(new Users({model:self.taskPlanModel}).render().$el);
+                self.ui.users.html(new Users({model:self.taskPlanModel}).render().$el);
                 self.ui.usersToAssign.html(new UsersToAssign({model:self.taskPlanModel}).render().$el);
 
             });

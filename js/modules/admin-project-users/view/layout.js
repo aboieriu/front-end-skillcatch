@@ -19,7 +19,7 @@ define(function(require, exports, module) {
 
         }
         , onRender: function() {
-            var ProjectUsersCollection = new Users(this.masterModel.get('projectUsers'));
+            var ProjectUsersCollection = new Users(this.masterModel.get('users'));
             ProjectUsersCollection.projectId=new Project({projectId:this.options.model.id});
             this.ui.users.append(new UserCollectionView({collection:ProjectUsersCollection}).render().$el);
 

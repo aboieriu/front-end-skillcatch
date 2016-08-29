@@ -13,7 +13,7 @@ define(function(require, exports, module) {
         , events: {
             'click .removeUserFromProject':'removeUserFromProject'
         },
-        
+
         removeUserFromProject: function(ev) {
             ev.stopPropagation();
             this.model.url=window.baseApiPath+'/api/projects/'+this.model.collection.projectId.get('projectId')+'/removeUserFromProject/'+this.model.id;

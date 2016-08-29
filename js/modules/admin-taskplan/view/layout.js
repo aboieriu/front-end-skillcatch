@@ -31,8 +31,9 @@ define(function(require, exports, module) {
                 name: this.ui.name.val()
                 , description: this.ui.description.val()
             };
-
+            debugger;
             this.masterModel.get('taskPlans').push(taskplanData);
+            debugger;
             this.masterModel.save().always(function(){
                 self.masterModel.fetch();
             })
