@@ -1,0 +1,12 @@
+<% if (obj.model) { %>
+.user-details-container
+    .user-avatar
+        img(src!="<%= obj.model.image %>")
+    .user-data
+        .user-names
+            <%- obj.model.name %>
+            <%- obj.model.surname %>
+        .user-email
+            span.border
+                <%- obj.model.email %>
+<% } %>

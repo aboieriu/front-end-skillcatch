@@ -1,0 +1,15 @@
+default:
+    - 'build'
+build:
+    - 'clean:build'
+    - 'jst'
+    - 'less'
+    - 'cssmin'
+    - 'copy:bootstrap'
+    - 'clean:build_after'
+deploy:
+    - 'clean:deploy'
+    - 'build'
+    - 'copy:deploy'
+    - 'requirejs'
+    - 'htmlbuild:deploy'

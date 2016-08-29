@@ -1,0 +1,51 @@
+.project-header
+    .project-name
+        <%= obj.model.name %>
+.points
+    .total
+        .badge-container
+            .badges-available-container
+                .heading
+                    |Available
+                .content
+                    <%= obj.getAvailableBadges() %>
+            .badge
+                figure.hexagon-outer
+                    figure.hexagon-mask
+                    figure.hexagon-inner.grey
+                    span.overlay
+        .points-count
+            |<%= obj.getAvailablePoints() %>
+            .pts
+                |pts
+    .awarded
+        .badge-container
+            .badges-available-container
+                .heading
+                    |Awarded
+                .content
+                    |<%= obj.getAwardedBadges() %>
+            .badge
+                figure.hexagon-outer
+                    figure.hexagon-mask
+                    figure.hexagon-inner.green
+                    span.overlay
+        .points-count
+            |<%= obj.getAwardedPoints() %>
+            .pts
+                |pts
+.project-body
+    .tasks
+        .total
+            .heading
+                |Number of tasks left to do
+            .content
+                <%= obj.getAvailableTasks() %>
+                |tasks
+        .done
+            .heading
+                |Number of tasks done
+            .content
+                <%= obj.getAwardedTasks() %>
+                |tasks
+    .project-progress
