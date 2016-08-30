@@ -1,0 +1,29 @@
+.card-header
+    i.fa.fa-file-text
+    | Award Badge
+.card-1.layout-container
+    table.table.table-striped.table-hover.table-condensed.assignBadge
+        thead
+            tr
+                td
+                    | Name
+                td
+                    | Points
+                td
+                    | Description
+                td
+                    | Image
+                td
+            tr
+                td
+                    input(id="badgeName",name="name").form-name
+                td
+                    input(id="badgePoints",name="points",type="number").form-points
+                td
+                    textarea(id="badgeDescription",name="description", style="width:100%").form-description
+                td
+                    textarea(id="badgeImage",name="image", style="width:100%").form-image
+                td
+                    button(onclick=clearFields).btn.btn-primary.addBadge
+                        | Add
+

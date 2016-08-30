@@ -1,0 +1,95 @@
+.badges-container {
+  background-color:white;
+  padding:10px 0px;
+  > ul {
+    overflow:hidden;
+    padding:0px;
+    > li {
+      float:left;
+      padding:25px;
+      position:relative;
+      &.pending {
+        opacity:0.4;
+        .green {
+          background-color:grey;
+          &:before {
+            border-color:grey transparent;
+          }
+          &:after {
+            border-color:grey transparent;
+          }
+        }
+        .award-status {
+          display:block;
+        }
+      }
+    }
+  }
+
+  .badge-details {
+    position:relative;
+    margin:0;
+  }
+
+  .badge-name-container {
+    position: relative;
+    height: 0;
+    overflow: visible;
+    top: -5px;
+    z-index: 2;
+    .name {
+      background-color: #4E4D55;
+      left: 0;
+      right: 0;
+      border-radius: 10px;
+      padding: 5px;
+      font-size: 9px;
+      text-transform: uppercase;
+      color: white;
+      cursor:pointer;
+      text-align:center;
+    }
+  }
+
+  .badge-points-container {
+    position: relative;
+    height: 0;
+    overflow: visible;
+    top: 20px;
+    z-index: 2;
+    .points {
+      text-align:center;
+      font-size:18px;
+      color:white;
+      font-weight:bold;
+      display:block !important;
+
+    }
+    .pts {
+      font-size:10px;
+      color:white;
+      margin-top:-8px;
+      text-align:center;
+    }
+  }
+
+  .award-status {
+    display:none;
+    position: relative;
+    z-index: 2;
+    top: -21px;
+    height: 0px;
+    overflow:visible;
+    .status {
+      background-color:#e63946;
+      color:white;
+      font-size: 9px;
+      margin: 0 auto;
+      width: 76px;
+      text-align: center;
+      padding: 2px;
+      border-radius: 10px;
+    }
+
+  }
+}
