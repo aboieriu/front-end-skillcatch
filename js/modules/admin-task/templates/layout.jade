@@ -1,0 +1,26 @@
+.card-header
+    i.fa.fa-tasks
+    | Tasks
+.card-1.layout-container
+    table.table.table-striped.table-hover.table-condensed.tasks-container
+        thead
+            tr
+                td
+                    | Name
+                td
+                    | Description
+                td
+                    |Status
+                td
+            tr
+                td
+                    input(name="name" class="form-control").form-name
+                td
+                    textarea(name="description", style="width:100%" class="form-control").form-description
+                td
+                    select.form-status(class="form-control")
+                        option(value="TODO")
+                            | TODO
+                td
+                    button.btn.btn-primary.addTask
+                        | Add

@@ -1,0 +1,21 @@
+.card-header
+    i.fa.fa-th
+    | Projects
+.card-1.layout-container
+    table.table.table-striped.table-hover.table-condensed.projects-container
+        thead
+            tr
+                td
+                    |Name
+                td
+                    |Description
+                td
+            tr
+                td
+                    input(id="projectName",name="name", class="form-control").form-name
+                td
+                    textarea(id="projectDescription",name="description", style="width:100%" class="form-control").form-description
+                td
+                    button.btn.btn-primary.addProject
+                        |Add
+

@@ -1,0 +1,30 @@
+.card-header
+    i.fa.fa-trophy
+    | All Badges
+.card-1.layout-container
+    table.table.table-striped.table-hover.table-condensed.adminBadges-container
+        thead
+            tr
+                td
+                    | Name
+                td
+                    | Points
+                td
+                    | Description
+                td
+                    | Image
+                td
+            tr
+                td
+                    input(id="badgeName",class="form-control",name="name").form-name
+                td
+                    input(id="badgePoints",name="points",class="form-control",type="number").form-points
+                td
+                    textarea(id="badgeDescription",name="description",class="form-control", style="width:100%").form-description
+                td
+                    form(method="POST" enctype="multipart/form-data" id="badgeImageUploadForm")
+                        input.badgeUpdatePicture(type="file",id="badgeImage",class="form-control",name="image", style="width:100%").form-image
+                td
+                    button(id="addBadgeBtn",type=submit,onclick=clearFields,form="badgeImageUploadForm").btn.btn-primary.addBadge
+                        | Add
+
