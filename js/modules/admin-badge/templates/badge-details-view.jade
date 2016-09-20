@@ -1,0 +1,35 @@
+.badgeDetails-view
+    .badge-details
+        h2
+            <%= obj.model.name %>
+        .description
+            label
+                | Description:
+                <%= obj.model.description %>
+            br
+            label
+                | Points:
+                <%= obj.model.points %>
+    .badge-details-edit
+        h3.edit-BadgeTitle
+            | Edit Badge details:
+        form.col-md-8.editForm(id="editBadgeFrom")
+            .editBadgeName.col-md-6
+                label
+                    | BadgeName:
+                input.form-control(type="text", id="badgeName", placeholder="BadgeName")
+                br
+                label
+                    | BadgePoints:
+                input.form-control(type="text", id="badgePoints", placeholder="BadgePoints")
+                br
+            .editBadgeDescription.col-md-6
+                label
+                    | BadgeImage:
+                input.badgeEditPicture(type="file",id="badgeImage",class="form-control",name="image", style="width:100%")
+                br
+                label
+                    | BadgeDescription:
+                textarea.form-control( id="badgeDescription", placeholder="BadgeDescription")
+            #editBtn
+                input.btn.btn-info(type="submit" form="editBadgeFrom" value=" Save Changes" id="badgeEditButton")

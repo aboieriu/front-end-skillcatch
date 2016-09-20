@@ -1,0 +1,12 @@
+td
+    <%= obj.model.name %>
+td
+    <%= obj.model.description %>
+td
+    <%= obj.model.points %>
+td
+    a(href!="<%=obj.model.image%>")
+        | Image Link
+td
+    button.btn.btn-danger.removeBadge
+        i.fa.fa-trash
