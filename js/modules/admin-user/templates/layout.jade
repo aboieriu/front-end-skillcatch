@@ -1,0 +1,40 @@
+.card-header
+    i.fa.fa-user
+    | Users
+.card-1.layout-container
+    table.table.table-striped.table-hover.table-condensed.users-container
+        thead
+            tr
+                td.col-sm-2
+                    | Username
+                td.col-sm-2
+                    | First name
+                td.col-sm-2
+                    | Last name
+                td.col-sm-2
+                    | Email
+                td.col-sm-2
+                    | Password
+                td.col-md-2
+                    |UserAvatar
+                td
+                td
+
+        tr
+            td
+                input(id="formUsername",name="username",class="col-sm-12 form-control").form-username
+            td
+                input(id="formFirstName",name="fname",class="col-sm-12 form-control").form-fname
+            td
+                input(id="formLastName",name="lname",class="col-sm-12 form-control").form-lname
+            td
+                input(id="formEmail",name="email",class="col-sm-12 form-control").form-email
+            td
+                input(id="formPassword",name="password" type="password",class="col-sm-12 form-control").form-password
+            td
+                form(method="POST" enctype="multipart/form-data" id="imageUploadForm")
+                    input.userAddPicture(type="file",id="formUserAvatar",class="col-sm-12 form-control",name="uploadedFile").form-userAvatar
+            td
+            td
+                button.btn.btn-primary.addUser(type="submit",form="imageUploadForm",onclick=clearFields)
+                    | Add

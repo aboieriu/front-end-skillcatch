@@ -1,0 +1,17 @@
+td
+    <%= obj.model.name %>
+td
+    <%= obj.model.username %>
+td
+    <%= obj.model.surname %>
+td
+    <%= obj.model.email %>
+td
+    <%= obj.model.phone %>
+td
+    <%= obj.model.address %>
+td
+    <%= moment(obj.model.addedOn).format("DD-MM-YYYY") %>
+td
+    button.btn.btn-primary.assignToProject
+        | AssignToProject

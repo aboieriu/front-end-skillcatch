@@ -1,0 +1,23 @@
+.user-details
+    h2
+        <%= obj.model.name %> <%= obj.model.surname %>
+    .description
+        label
+            | Username:
+            <%= obj.model.username %>
+        br
+        label
+            | Email:
+            <%= obj.model.email %>
+        br
+        label
+            | Phone:
+            <%= obj.model.phone %>
+        br
+        label
+            | Address:
+            <%= obj.model.address %>
+        br
+        label
+            | AddedOn:
+            <%= moment(obj.model.addedOn).format("DD-MM-YYYY") %>

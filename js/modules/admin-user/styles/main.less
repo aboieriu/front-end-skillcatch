@@ -1,0 +1,65 @@
+table.user-table{
+  table-layout: fixed;
+}
+.userDetails-view{
+  width: 100%;
+  display: inline-flex;
+  .user-details{
+    width: 20%;
+  }
+  .user-details-edit{
+    width: 80%;
+
+    h3.edit-UserTitle {
+      margin-left: 28px;
+    }
+    input#firstName {
+      width: 80%;
+    }
+    input#surname {
+      width: 80%;
+    }
+    input#username{
+      width: 80%;
+    }
+    input#password{
+      width: 80%;
+    }
+    input#phone{
+      width: 80%;
+    }
+    input#address{
+      width: 80%;
+    }
+    input#email{
+      width: 80%;
+    }
+    input#userEditButton {
+      margin-top: 6.5%;
+    }
+    form#editUserFrom {
+      display: inline-flex;
+    }
+
+  }
+}
+.form-control.form-userAvatar::-webkit-file-upload-button {
+  display: block;
+  color: black;
+  width: 0;
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none;
+  border: none;
+  border: 0px;
+
+}
+::-webkit-file-upload-button, input[type=file].userAddPicture:after {
+  content: 'Choose...';
+  left: 65%;
+  position: absolute;
+  -webkit-appearance: button;
+  padding: 6px 12px 6px 13px;
+  border: 0;
+  top: 0px;
+}
